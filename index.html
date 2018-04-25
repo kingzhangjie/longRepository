@@ -1,0 +1,823 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<meta name="keywords" content="" />
+		<meta name="description" content="" />
+		<title>首页</title>
+		<link rel="stylesheet" type="text/css" href="css/base1.0.css" />
+		<link rel="stylesheet" type="text/css" href="js/swiper4.0/swiper.min.css" />
+		<link rel="stylesheet" type="text/css" href="css/allSprrite1.0.css" />
+		<style type="text/css">
+			/*banner图*/
+			
+			.xx-banner {
+				min-height: 418px;
+			}
+			
+			.xx-banner img {
+				width: 100%;
+			}
+			
+			.xx-banner .swiper-button-prev,
+			.xx-banner .swiper-button-next {
+				background: url(img/swiperprev.png) no-repeat;
+				background-size: 40px;
+				background-position: center;
+				border-radius: 50%;
+				width: 80px;
+				height: 80px;
+				transition: all .3s;
+				-moz-transition: all .3s;
+				-webkit-transition: all .3s;
+			}
+			
+			.xx-banner .swiper-button-prev {
+				left: 15%;
+			}
+			
+			.xx-banner .swiper-button-next {
+				right: 15%;
+				transform: rotateY(180deg);
+				-moz-transform: rotateY(180deg);
+				-webkit-transform: rotateY(180deg);
+			}
+			
+			.xx-banner .swiper-button-next:hover,
+			.xx-banner .swiper-button-prev:hover {
+				background-color: #000;
+				filter: alpha(opacity=30);
+				opacity: 0.3;
+				-moz-opacity: 0.3;
+				-khtml-opacity: 0.3;
+			}
+			
+			.xx-banner .swiper-pagination-bullet {
+				width: 17px;
+				height: 17px;
+				margin-left: 15px !important;
+				background-color: #fff;
+				filter: alpha(opacity=100);
+				opacity: 1;
+				-moz-opacity: 1;
+				-khtml-opacity: 1;
+				box-shadow: 0 0 2px 0 #96c3ff;
+			}
+			
+			.xx-banner .swiper-pagination-bullet-active {
+				background-color: #3c8fff;
+			}
+			
+			.xx-banner .banner-intr {
+				width: 1000px;
+				height: 100%;
+				position: absolute;
+				top: 0;
+				left: 50%;
+				margin-left: -600px;
+				padding-left: 200px;
+			}
+			
+			.banner-intr .banner-intr-title {
+				margin-top: 120px;
+				position: relative;
+			}
+			
+			.banner-intr .banner-intr-title i {
+				width: 34px;
+				height: 3px;
+				background-color: #ff5a75;
+				position: absolute;
+				bottom: -10px;
+				left: 0;
+			}
+			
+			.banner-intr .banner-intr-recomm {
+				margin-top: 30px
+			}
+			
+			.banner-intr a {
+				position: relative;
+				display: inline-block;
+				padding: 10px 30px;
+				border: 1px solid #ff5a75;
+				border-radius: 3px;
+				margin-top: 50px;
+				color: #ff5a75;
+			}
+			
+			.banner-intr a:hover {
+				background-color: #ff5a75;
+				color: #fff !important;
+			}
+			/*介绍*/
+			
+			.xx-product-lump01 {
+				height: 447px;
+			}
+			
+			.xx-referral li {
+				float: left;
+				height: 90px;
+				width: 20%;
+				margin-right: 5%;
+				transition: all .3s;
+				-moz-transition: all .3s;
+				-webkit-transition: all .3s;
+			}
+			
+			.xx-referral li:hover {
+				filter: alpha(opacity=60);
+				opacity: .6;
+				-moz-opacity: .6;
+				-khtml-opacity: .6;
+			}
+			
+			.xx-referral li .xx-left {
+				width: 40%;
+			}
+			
+			.xx-referral li .xx-right {
+				width: 56%;
+			}
+			/*母婴保险专区*/
+			
+			.xx-product-lump03 {}
+			
+			.xx-product-lump03 .xx-product-ac li {
+				width: 48%;
+				margin-right: 2%;
+				position: relative;
+				float: left;
+			}
+			
+			.xx-product-lump03 .xx-product-ac li img {
+				width: 100%;
+				border-radius: 10px;
+				box-shadow: 0 0 20px 1px #e3e3e3;
+			}
+			
+			.muying-product {
+				position: absolute;
+				width: 250px;
+				right: 0;
+				top: 40px;
+			}
+			
+			.muying-product h3 {}
+			/*星保精选*/
+			
+			.xx-product-lump01 .xx-product-ac li {
+				height: 392px;
+				float: left;
+				width: 23%;
+				margin-right: 2%;
+				transition: all .3s;
+				-moz-transition: all .3s;
+				-webkit-transition: all .3s;
+				border-radius: 2px;
+				overflow: hidden;
+				position: relative;
+			}
+			
+			.xx-product-lump01 .xx-product-ac li img {
+				width: 100%;
+				height: 260px;
+				display: block;
+				margin: 0 auto;
+				transition: all .1s;
+				-moz-transition: all .1s;
+				-webkit-transition: all .1s;
+				border-radius: 2px;
+			}
+			
+			.xx-product-lump01 .xx-product-ac li:hover {
+				box-shadow: 0 0 21px 0 #efefef;
+			}
+			
+			.xx-product-lump01 .xx-product-ac li:hover img {
+				width: 95%;
+				height: 240px;
+				margin-top: 5px;
+			}
+			/*特色专区*/
+			
+			.xx-product-lump04 {}
+			
+			.xx-feature01 {
+				width: 48%;
+				margin-right: 2%;
+				height: 381px;
+				background-color: #f9f9f9;
+				position: relative;
+				text-align: center;
+				cursor: pointer;
+				border-radius: 5px;
+			}
+			
+			.xx-feature01 h3 {
+				margin-top: 310px;
+			}
+			
+			.xx-feature01 p {
+				color: #b4b4b4;
+			}
+			
+			.xx-feature01 img {
+				width: 90%;
+				position: absolute;
+				top: -30px;
+				left: 50%;
+				transform: translateX(-50%);
+				-moz-transform: translateX(-50%);
+				-webkit-transform: translateX(-50%);
+				border-radius: 5px;
+				transition: all .1s linear;
+				-moz-transition: all .1s linear;
+				-webkit-transition: all .1s linear;
+			}
+			
+			.xx-feature01:hover img {
+				top: 10px;
+			}
+			
+			.xx-feature02 {
+				width: 50%;
+			}
+			
+			.xx-feature02 li {
+				height: 392px;
+				width: 45%;
+				margin-right: 5%;
+				position: relative;
+			}
+			
+			.xx-feature02 li img {
+				display: block;
+				width: 100%;
+				height: 260px;
+				margin-left: auto;
+				margin-right: auto;
+				transition: all .1s;
+				-moz-transition: all .1s;
+				-webkit-transition: all .1s;
+			}
+			
+			.xx-feature02 li:hover {
+				box-shadow: 0 0 21px 0 #efefef;
+			}
+			
+			.xx-feature02 li:hover img {
+				width: 95%;
+				height: 240px;
+				margin-top: 5px;
+			}
+			/*统计*/
+			
+			.xx-statistics {
+				height: 225px;
+				background: url(img/xiaoliangbackground.jpg) no-repeat;
+				background-size: auto;
+			}
+			
+			.xx-statistics ul li {
+				float: left;
+				width: 33.3333%;
+			}
+			/*合作伙伴*/
+			
+			.xx-product-lump02 {}
+			
+			.xx-product-lump02 .xx-product-ac {}
+			
+			.xx-product-lump02 .xx-product-ac li {
+				width: 25%;
+				height: 90px;
+				text-align: center;
+				float: left;
+				padding: 8px 0;
+				border-top: 1px solid #ededed;
+				border-right: 1px solid #ededed;
+				box-sizing: border-box;
+				cursor: pointer;
+			}
+			
+			.xx-product-lump02 .xx-product-ac li:nth-of-type(1) {
+				border-top: none;
+			}
+			
+			.xx-product-lump02 .xx-product-ac li:nth-of-type(2) {
+				border-top: none;
+			}
+			
+			.xx-product-lump02 .xx-product-ac li:nth-of-type(3) {
+				border-top: none;
+			}
+			
+			.xx-product-lump02 .xx-product-ac li:nth-of-type(4) {
+				border-top: none;
+			}
+			
+			.xx-product-lump02 .xx-product-ac li:nth-of-type(4n) {
+				border-right: none;
+			}
+			
+			.xx-product-lump02 .xx-product-ac li div {
+				width: 180px;
+				height: 70px;
+			}
+			
+			.xx-product-lump02 .xx-product-ac li div:nth-of-type(2) {
+				display: none;
+			}
+			/*app*/
+			
+			.appinter {
+				position: relative;
+			}
+			
+			.appinterbg {
+				width: 100%;
+			}
+			
+			.appinterac {
+				position: absolute;
+				top: 0;
+				left: 50%;
+				margin-left: -600px;
+			}
+			
+			.xx-appcode img {
+				width: 120px;
+				border-radius: 5px;
+			}
+			
+			.xx-appcode p {}
+			/*即将上线*/
+			
+			.in-comingcon {
+				position: absolute;
+				top: 0;
+				left: 0;
+				width: 150px;
+				height: 150px;
+				overflow: hidden;
+			}
+			
+			.in-comingcon .in-coming {
+				position: absolute;
+				top: -75px;
+				left: -75px;
+				background-color: #bbbbbb;
+				color: #fff;
+				font-size: 14px;
+				width: 150px;
+				height: 150px;
+				text-align: center;
+				transform: rotateZ(45deg);
+				-moz-transform: rotateZ(45deg);
+				-webkit-transform: rotateZ(45deg);
+				filter: alpha(opacity=80);
+				opacity: .8;
+				-moz-opacity: .8;
+				-khtml-opacity: .8;
+			}
+			
+			.in-comingcon .in-coming p {
+				position: absolute;
+				transform: rotateZ(-45deg);
+				-moz-transform: rotateZ(-45deg);
+				-webkit-transform: rotateZ(-45deg);
+				width: 100px;
+				top: 60px;
+				left: 70px;
+			}
+		</style>
+	</head>
+
+	<body>
+		<div class="xx-contant xx-head">
+
+		</div>
+		<div class="xx-contant">
+			<div id="banner" class="swiper-container xx-banner">
+				<div class="swiper-wrapper">
+					<div class="swiper-slide">
+						<img src="img/banner01.jpg" />
+						<div class="banner-intr xx-font-color-ff5a75">
+							<div class="banner-intr-title">
+								<h3 class="xx-font-size-32 xx-font-color-ff5a75">母婴安心保障<i></i></h3>
+							</div>
+							<div class="banner-intr-recomm xx-font-size-16">
+								<p>宝宝健康降临&nbsp;|&nbsp;有你安心的温柔</p>
+								<p>年龄跨度大,护航20-40岁准妈妈</p>
+							</div>
+							<a href="">查看详情</a>
+						</div>
+					</div>
+					<div class="swiper-slide">
+						<img src="img/banner01.jpg" />
+						<div class="banner-intr xx-font-color-ff5a75">
+							<div class="banner-intr-title">
+								<h3 class="xx-font-size-32 xx-font-color-ff5a75">母婴安心保障<i></i></h3>
+							</div>
+							<div class="banner-intr-recomm xx-font-size-16">
+								<p>宝宝健康降临&nbsp;|&nbsp;有你安心的温柔</p>
+								<p>年龄跨度大,护航20-40岁准妈妈</p>
+							</div>
+							<a href="">查看详情</a>
+						</div>
+					</div>
+					<div class="swiper-slide">
+						<img src="img/banner01.jpg" />
+						<div class="banner-intr xx-font-color-ff5a75">
+							<div class="banner-intr-title">
+								<h3 class="xx-font-size-32 xx-font-color-ff5a75">母婴安心保障<i></i></h3>
+							</div>
+							<div class="banner-intr-recomm xx-font-size-16">
+								<p>宝宝健康降临&nbsp;|&nbsp;有你安心的温柔</p>
+								<p>年龄跨度大,护航20-40岁准妈妈</p>
+							</div>
+							<a href="">查看详情</a>
+						</div>
+					</div>
+				</div>
+				<div class="swiper-pagination"></div>
+				<div class="swiper-button-prev"></div>
+				<div class="swiper-button-next"></div>
+			</div>
+		</div>
+		<div class="xx-contant">
+			<div class="xx-row">
+				<ul class="xx-referral xx-margin-top-50 xx-clear">
+					<li>
+						<div class="xx-left">
+							<div class="sparing-url01 sparing-ingr-zhuanye"></div>
+						</div>
+						<div class="xx-right">
+							<h3 class="xx-font-size-20 xx-font-color-444">专业优选</h3>
+							<p class="xx-font-color-b6b6b6">精准选择同类产品中最优质的保险产品</p>
+						</div>
+					</li>
+					<li>
+						<div class="xx-left">
+							<div class="sparing-url01 sparing-ingr-zhineng"></div>
+						</div>
+						<div class="xx-right">
+							<h3 class="xx-font-size-20 xx-font-color-444">智能推荐</h3>
+							<p class="xx-font-color-b6b6b6">针对不同定位的人群智能推荐适合的保险</p>
+						</div>
+					</li>
+					<li>
+						<div class="xx-left">
+							<div class="sparing-url01 sparing-ingr-gaodi"></div>
+						</div>
+						<div class="xx-right">
+							<h3 class="xx-font-size-20 xx-font-color-444">高质低价</h3>
+							<p class="xx-font-color-b6b6b6">网上直销面对客户平民低价收获信赖</p>
+						</div>
+					</li>
+					<li>
+						<div class="xx-left">
+							<div class="sparing-url01 sparing-ingr-pinzhi"></div>
+						</div>
+						<div class="xx-right">
+							<h3 class="xx-font-size-20 xx-font-color-444">品质服务</h3>
+							<p class="xx-font-color-b6b6b6">线上直连保险公司出单稳定理赔迅速</p>
+						</div>
+					</li>
+				</ul>
+			</div>
+		</div>
+		<div class="xx-contant">
+			<div class="xx-row">
+				<div class="xx-product-lump xx-product-lump03 xx-margin-top-80">
+					<div class="xx-product-title xx-clear">
+						<img class="xx-left xx-margin-top-10 xx-margin-right-10" src="img/producttitle.png" alt="" />
+						<h3 class="xx-left xx-font-size-28">
+							母婴保险专区
+							<a href="" class="xx-font-size-14 xx-font-color-1e98ff"><span class="xx-font-color-1e98ff">推荐配置</span></a>
+						</h3>
+						<span>
+							<a href="" class="xx-font-size-14 xx-right xx-margin-top-20 xx-margin-right-30"><span class="xx-font-color-1e98ff">进入专区&nbsp;&gt;</span></a>
+						</span>
+					</div>
+					<ul class="xx-product-ac xx-margin-top-30 xx-clear">
+						<li>
+							<a href="">
+								<img src="img/myyingproduct.png" alt="" />
+								<div class="muying-product">
+									<h3 class="xx-font-size-32 xx-font-color-1e98ff">母婴安心保</h3>
+									<p class="xx-font-size-14 xx-font-color-1e98ff">宝宝健康降临|有你安心的温柔 </p>
+									<div class="xx-font-size-16 xx-margin-top-30 xx-font-color-d4282d"><span class="xx-font-size-32">45</span>元</div>
+								</div>
+								<div class="in-comingcon">
+									<div class="in-coming">
+										<p>即将上线</p>
+									</div>
+								</div>
+							</a>
+						</li>
+						<li>
+							<a href="">
+								<img src="img/ertongproduct.png" alt="" />
+								<div class="muying-product">
+									<h3 class="xx-font-size-32 xx-font-color-ff4a4a">母婴安心保</h3>
+									<p class="xx-font-size-14 xx-font-color-ff4a4a">宝宝健康降临|有你安心的温柔 </p>
+									<div class="xx-font-size-16 xx-margin-top-30 xx-font-color-d4282d"><span class="xx-font-size-32">45</span>元</div>
+								</div>
+								<div class="in-comingcon">
+									<div class="in-coming">
+										<p>即将上线</p>
+									</div>
+								</div>
+							</a>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+		<div class="xx-contant">
+			<div class="xx-row">
+				<div class="xx-product-lump xx-product-lump01 xx-margin-top-80">
+					<div class="xx-product-title xx-clear">
+						<img class="xx-left xx-margin-top-10 xx-margin-right-10" src="img/producttitle.png" alt="" />
+						<h3 class="xx-left xx-font-size-28">星保精选</h3>
+					</div>
+					<ul class="xx-product-ac xx-margin-top-30 xx-clear">
+						<li>
+							<a href="">
+								<img src="img/jachengxianproduct.png" alt="" />
+								<h3 class="xx-margin-top-10 xx-padding-left-10 xx-font-size-20"><b>驾乘人员意外保险</b></h3>
+								<p class="xx-padding-left-10 xx-font-color-b6b6b6">上班、出行、旅游 | 驾乘保常伴左右</p>
+								<div class="xx-padding-left-10 xx-prosales xx-left xx-margin-top-40 xx-font-size-12 xx-font-color-b6b6b6">
+									<span>销量：23456份</span>
+								</div>
+								<div class="xx-padding-right-10 xx-proprice xx-right xx-margin-top-20 xx-font-size-16">
+									￥<b class="xx-font-color-d4282d xx-padding-right-5 xx-padding-left-5 xx-font-size-32">45</b>起
+								</div>
+								<div class="in-comingcon">
+									<div class="in-coming">
+										<p>即将上线</p>
+									</div>
+								</div>
+							</a>
+						</li>
+						<li>
+							<a href="">
+								<img src="img/xuecheproduct.jpg" alt="" />
+								<h3 class="xx-margin-top-10 xx-padding-left-10 xx-font-size-20"><b>学车无忧</b></h3>
+								<p class="xx-padding-left-10 xx-font-color-b6b6b6">上班、出行、旅游 | 驾乘保常伴左右</p>
+								<div class="xx-padding-left-10 xx-prosales xx-left xx-margin-top-40 xx-font-size-12 xx-font-color-b6b6b6">
+									<span>销量：23456份</span>
+								</div>
+								<div class="xx-padding-right-10 xx-proprice xx-right xx-margin-top-20 xx-font-size-16">
+									￥<b class="xx-font-color-d4282d xx-padding-right-5 xx-padding-left-5 xx-font-size-32">45</b>起
+								</div>
+							</a>
+						</li>
+						<li>
+							<a href="">
+								<img src="img/zhuyuanproduct.png" alt="" />
+								<h3 class="xx-margin-top-10 xx-padding-left-10 xx-font-size-20"><b>尊享无忧</b></h3>
+								<p class="xx-padding-left-10 xx-font-color-b6b6b6">上班、出行、旅游 | 驾乘保常伴左右</p>
+								<div class="xx-padding-left-10 xx-prosales xx-left xx-margin-top-40 xx-font-size-12 xx-font-color-b6b6b6">
+									<span>销量：23456份</span>
+								</div>
+								<div class="xx-padding-right-10 xx-proprice xx-right xx-margin-top-20 xx-font-size-16">
+									￥<b class="xx-font-color-d4282d xx-padding-right-5 xx-padding-left-5 xx-font-size-32">45</b>起
+								</div>
+							</a>
+						</li>
+						<li>
+							<a href="">
+								<img src="img/ejiabaoproduct.jpg" alt="" />
+								<h3 class="xx-margin-top-10 xx-padding-left-10 xx-font-size-20"><b>e家保</b></h3>
+								<p class="xx-padding-left-10 xx-font-color-b6b6b6">上班、出行、旅游 | 驾乘保常伴左右</p>
+								<div class="xx-padding-left-10 xx-prosales xx-left xx-margin-top-40 xx-font-size-12 xx-font-color-b6b6b6">
+									<span>销量：23456份</span>
+								</div>
+								<div class="xx-padding-right-10 xx-proprice xx-right xx-margin-top-20 xx-font-size-16">
+									￥<b class="xx-font-color-d4282d xx-padding-right-5 xx-padding-left-5 xx-font-size-32">45</b>起
+								</div>
+							</a>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+		<div class="xx-contant">
+			<div class="xx-row">
+				<div class="xx-product-lump xx-product-lump04 xx-margin-top-80">
+					<div class="xx-product-title xx-clear">
+						<img class="xx-left xx-margin-top-10 xx-margin-right-10" src="img/producttitle.png" alt="" />
+						<h3 class="xx-left xx-font-size-28">特色专区</h3>
+					</div>
+					<div class="xx-featurecon xx-clear xx-margin-top-70">
+						<div class="xx-feature01 xx-left">
+							<img src="img/delebing.png" alt="" />
+							<h3 class="xx-font-size-20"><b>得了病也能保</b></h3>
+							<p class="xx-font-size-14">给父母最好的礼物，是让他们的健康得到守护</p>
+						</div>
+						<ul class="xx-feature02 xx-left">
+							<li class="xx-left">
+								<a href="">
+									<img src="img/jachengxianproduct.png" alt="" />
+									<h3 class="xx-margin-top-10 xx-padding-left-10 xx-font-size-20"><b>高压并发症保险</b></h3>
+									<p class="xx-padding-left-10 xx-font-color-b6b6b6">上班、出行、旅游 | 驾乘保常伴左右</p>
+									<div class="xx-padding-left-10 xx-prosales xx-left xx-margin-top-40 xx-font-size-12 xx-font-color-b6b6b6">
+										<span>销量：23456份</span>
+									</div>
+									<div class="xx-padding-right-10 xx-proprice xx-right xx-margin-top-20 xx-font-size-16">
+										￥<b class="xx-font-color-d4282d xx-padding-right-5 xx-padding-left-5 xx-font-size-32">45</b>起
+									</div>
+									<div class="in-comingcon">
+										<div class="in-coming">
+											<p>即将上线</p>
+										</div>
+									</div>
+								</a>
+							</li>
+							<li class="xx-left">
+								<a href="">
+									<img src="img/zhonglaonianguzheproduct.jpg" alt="" />
+									<h3 class="xx-margin-top-10 xx-padding-left-10 xx-font-size-20"><b>中老年骨折险</b></h3>
+									<p class="xx-padding-left-10 xx-font-color-b6b6b6">上班、出行、旅游 | 驾乘保常伴左右</p>
+									<div class="xx-padding-left-10 xx-prosales xx-left xx-margin-top-40 xx-font-size-12 xx-font-color-b6b6b6">
+										<span>销量：23456份</span>
+									</div>
+									<div class="xx-padding-right-10 xx-proprice xx-right xx-margin-top-20 xx-font-size-16">
+										￥<b class="xx-font-color-d4282d xx-padding-right-5 xx-padding-left-5 xx-font-size-32">45</b>起
+									</div>
+								</a>
+							</li>
+						</ul>
+					</div>
+					<div class="xx-featurecon xx-clear xx-margin-top-70">
+						<div class="xx-feature01 xx-left">
+							<img src="img/chengjialiye.jpg" alt="" />
+							<h3 class="xx-font-size-20"><b>成家立业还差保险</b></h3>
+							<p class="xx-font-size-14">给父母最好的礼物，是让他们的健康得到守护</p>
+						</div>
+						<ul class="xx-feature02 xx-left">
+							<li class="xx-left">
+								<a href="">
+									<img src="img/jiacaibaoproduct.jpg" alt="" />
+									<h3 class="xx-margin-top-10 xx-padding-left-10 xx-font-size-20"><b>家财宝综合保障</b></h3>
+									<p class="xx-padding-left-10 xx-font-color-b6b6b6">上班、出行、旅游 | 驾乘保常伴左右</p>
+									<div class="xx-padding-left-10 xx-prosales xx-left xx-margin-top-40 xx-font-size-12 xx-font-color-b6b6b6">
+										<span>销量：23456份</span>
+									</div>
+									<div class="xx-padding-right-10 xx-proprice xx-right xx-margin-top-20 xx-font-size-16">
+										￥<b class="xx-font-color-d4282d xx-padding-right-5 xx-padding-left-5 xx-font-size-32">45</b>起
+									</div>
+								</a>
+							</li>
+							<li class="xx-left">
+								<a href="">
+									<img src="img/jiatichengyuanproduct.jpg" alt="" />
+									<h3 class="xx-margin-top-10 xx-padding-left-10 xx-font-size-20"><b>家庭成员责任保险</b></h3>
+									<p class="xx-padding-left-10 xx-font-color-b6b6b6">上班、出行、旅游 | 驾乘保常伴左右</p>
+									<div class="xx-padding-left-10 xx-prosales xx-left xx-margin-top-40 xx-font-size-12 xx-font-color-b6b6b6">
+										<span>销量：23456份</span>
+									</div>
+									<div class="xx-padding-right-10 xx-proprice xx-right xx-margin-top-20 xx-font-size-16">
+										￥<b class="xx-font-color-d4282d xx-padding-right-5 xx-padding-left-5 xx-font-size-32">45</b>起
+									</div>
+								</a>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="xx-contant">
+			<div class="xx-statistics xx-margin-top-60">
+				<div class="xx-row">
+					<ul class="xx-clear xx-font-color-fff xx-padding-top-50">
+						<li class="xx-font-size-54 xx-align-center">
+							10000+
+							<p class="xx-font-size-18 xx-align-center xx-padding-top-20">积累发出保单</p>
+						</li>
+						<li class="xx-font-size-54 xx-align-center">
+							10000000+
+							<p class="xx-font-size-18 xx-align-center xx-padding-top-20">积累保险金额</p>
+						</li>
+						<li class="xx-font-size-54 xx-align-center">
+							60000000s
+							<p class="xx-font-size-18 xx-align-center xx-padding-top-20">积累服务客户时间</p>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+		<div class="xx-contant">
+			<div class="xx-row">
+				<div class="xx-product-lump xx-product-lump02 xx-margin-top-60">
+					<div class="xx-product-title xx-clear">
+						<img class="xx-left xx-margin-top-10 xx-margin-right-10" src="img/producttitle.png" alt="" />
+						<h3 class="xx-left xx-font-size-28">星保合作伙伴</h3>
+					</div>
+					<ul id="teamworkPart" class="xx-product-ac xx-margin-top-30 xx-clear">
+						<li>
+							<div class="sparing-url01 sparing-inzhongan"></div>
+							<div class="sparing-url01 sparing-inzhonganed"></div>
+						</li>
+						<li>
+							<div class="sparing-url01 sparing-inpingan"></div>
+							<div class="sparing-url01 sparing-inpinganed"></div>
+						</li>
+						<li>
+							<div class="sparing-url01 sparing-inrenshou"></div>
+							<div class="sparing-url01 sparing-inrenshoued"></div>
+						</li>
+						<li>
+							<div class="sparing-url01 sparing-intaikang"></div>
+							<div class="sparing-url01 sparing-intaikanged"></div>
+						</li>
+						<li>
+							<div class="sparing-url01 sparing-inrenmin"></div>
+							<div class="sparing-url01 sparing-inrenmined"></div>
+						</li>
+						<li>
+							<div class="sparing-url01 sparing-inyongan"></div>
+							<div class="sparing-url01 sparing-inyonganed"></div>
+						</li>
+						<li>
+							<div class="sparing-url01 sparing-intaipingyang"></div>
+							<div class="sparing-url01 sparing-intaipingyanged"></div>
+						</li>
+						<li>
+							<div class="sparing-url01 sparing-inxingfurenshou"></div>
+							<div class="sparing-url01 sparing-inxingfurenshoued"></div>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+		<div class="xx-contant">
+			<div class="appinter xx-margin-top-60">
+				<img class="appinterbg" src="img/appinter.jpg" alt="" />
+				<div class="xx-row appinterac">
+					<h3 class="xx-font-size-28 xx-font-color-fff xx-padding-top-100"><b>把保险放进口袋,把安全放到心中</b></h3>
+					<p class="xx-font-size-16 xx-font-color-fff">星星保呗,你值得信赖的<b class="xx-font-size-22">"宝妈"</b></p>
+					<div class="xx-appcode xx-margin-top-50 xx-font-size-15 xx-font-color-fff">
+						<img src="img/qrcode.jpg" alt="" />
+						<p class="xx-margin-top-10">扫描二维码下载星星保呗app</p>
+						<p>领取新人礼包</p>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="xx-contant xx-foot">
+		</div>
+		<div id="reScrllTop" class="return-scrolltop xx-hide">
+			<img src="img/returnscrollTop02.png" alt="" />
+		</div>
+	</body>
+	<script src="js/jquery-2.1.0.js" type="text/javascript" charset="utf-8"></script>
+	<script src="js/utility3.0.js" type="text/javascript" charset="utf-8"></script>
+	<script src="js/swiper4.0/swiper.min.js" type="text/javascript" charset="utf-8"></script>
+	<script type="text/javascript">
+		$(function() {
+			$(".xx-head").load('xx-nav.html');
+			$(".xx-foot").load('xx-foot.html');
+			//轮播
+			var indexBanner = new Swiper('#banner', {
+				speed: 1000,
+				autoplay: true,
+				loop: true,
+				// 分页器
+				pagination: {
+					el: '.swiper-pagination',
+				},
+				// 前进后退按钮
+				navigation: {
+					nextEl: '.swiper-button-next',
+					prevEl: '.swiper-button-prev',
+				},
+			})
+			$('#banner').mouseenter(function() {
+				indexBanner.autoplay.stop();
+			})
+			$('#banner').mouseleave(function() {
+				indexBanner.autoplay.start();
+			})
+
+			//合作商
+			$('#teamworkPart li').each(function(index, ele) {
+				$(this).hover(function() {
+					$(this).find('div').eq(0).stop().hide();
+					$(this).find('div').eq(1).stop().show();
+				}, function() {
+					$(this).find('div').eq(0).stop().show();
+					$(this).find('div').eq(1).stop().hide();
+				});
+			});
+			//返回顶部
+			retScrollTop('reScrllTop');
+		})
+	</script>
+
+</html>

@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<meta name="keywords" content="" />
+		<meta name="description" content="" />
+		<title>消息中心</title>
+		<link rel="stylesheet" type="text/css" href="css/base1.0.css" />
+		<link rel="stylesheet" type="text/css" href="css/personal-publick1.0.css" />
+		<link rel="stylesheet" type="text/css" href="css/allSprrite1.0.css" />
+		<style type="text/css">
+			
+		</style>
+	</head>
+
+	<body>
+		<div class="xx-contant xx-head">
+
+		</div>
+		<div class="xx-contant">
+			<div class="xx-row xx-clear xx-margin-top-40">
+				<div class="per-left xx-left">
+
+				</div>
+				<div class="per-right xx-right">
+					<div class="per-main">
+						<div class="per-contacts-con">
+							<div class="per-contacts-title">
+								<h3 class="xx-font-size-20">消息中心</h3>
+							</div>
+							<div class="messcent-con">
+								<div class="messcent xx-clear">
+									<div class="messcent-left xx-left">
+										<div class="sparing-url01 sparing-per-messcent-youhujuan">
+
+										</div>
+									</div>
+									<div class="messcent-right xx-right">
+										<h3 class="xx-font-size-16 xx-margin-top-20">优惠卷</h3>
+										<p class="xx-font-size-14 xx-font-color-99999">您获得了一张男性重疾险9折立减券打折券优惠券,有效期为2018-01-24至2018-02-02</p>
+									</div>
+								</div>
+								<div class="messcent xx-clear">
+									<div class="messcent-left xx-left">
+										<div class="sparing-url01 sparing-per-messcent-youhujuan">
+
+										</div>
+									</div>
+									<div class="messcent-right xx-right">
+										<h3 class="xx-font-size-16 xx-margin-top-20">优惠卷</h3>
+										<p class="xx-font-size-14 xx-font-color-99999">您获得了一张男性重疾险9折立减券打折券优惠券,有效期为2018-01-24至2018-02-02</p>
+									</div>
+								</div>
+								<div class="messcent xx-clear">
+									<div class="messcent-left xx-left">
+										<div class="sparing-url01 sparing-per-messcent-youhujuan">
+
+										</div>
+									</div>
+									<div class="messcent-right xx-right">
+										<h3 class="xx-font-size-16 xx-margin-top-20">优惠卷</h3>
+										<p class="xx-font-size-14 xx-font-color-99999">您获得了一张男性重疾险9折立减券打折券优惠券,有效期为2018-01-24至2018-02-02</p>
+									</div>
+								</div>
+								<div class="messcent xx-clear">
+									<div class="messcent-left xx-left">
+										<div class="sparing-url01 sparing-per-messcent-youhujuan">
+
+										</div>
+									</div>
+									<div class="messcent-right xx-right">
+										<h3 class="xx-font-size-16 xx-margin-top-20">优惠卷</h3>
+										<p class="xx-font-size-14 xx-font-color-99999">您获得了一张男性重疾险9折立减券打折券优惠券,有效期为2018-01-24至2018-02-02</p>
+									</div>
+								</div>
+								<div class="messcent xx-clear">
+									<div class="messcent-left xx-left">
+										<div class="sparing-url01 sparing-per-messcent-youhujuan">
+
+										</div>
+									</div>
+									<div class="messcent-right xx-right">
+										<h3 class="xx-font-size-16 xx-margin-top-20">优惠卷</h3>
+										<p class="xx-font-size-14 xx-font-color-99999">您获得了一张男性重疾险9折立减券打折券优惠券,有效期为2018-01-24至2018-02-02</p>
+									</div>
+								</div>
+								<div class="messcent xx-clear">
+									<div class="messcent-left xx-left">
+										<div class="sparing-url01 sparing-per-messcent-youhujuan">
+
+										</div>
+									</div>
+									<div class="messcent-right xx-right">
+										<h3 class="xx-font-size-16 xx-margin-top-20">优惠卷</h3>
+										<p class="xx-font-size-14 xx-font-color-99999">您获得了一张男性重疾险9折立减券打折券优惠券,有效期为2018-01-24至2018-02-02</p>
+									</div>
+								</div>
+								<div class="per-table-pagination xx-margin-top-40" id="jpage">
+									<!--<div class="per-table-prev">
+										上一页
+									</div>
+									<span>1</span>
+									<div class="per-table-next">
+										下一页
+									</div>-->
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="xx-contant xx-foot">
+
+		</div>
+	</body>
+	<script src="js/jquery-2.1.0.js" type="text/javascript" charset="utf-8"></script>
+	<script src="js/utility3.0.js" type="text/javascript" charset="utf-8"></script>
+	<script type="text/javascript" src="js/jqPaginator.js" ></script>
+	<script type="text/javascript">
+		$(function() {
+			$('.xx-head').load('xx-nav.html');
+			$('.xx-foot').load('xx-foot.html');
+			$('.per-left').load('personal-nav-left.html');
+			
+			
+			$('#jpage').jqPaginator({
+			    totalPages: 100,
+			    visiblePages: 10,
+			    currentPage: 1,
+			    onPageChange: function (num, type) {
+			        $('#text').html('当前第' + num + '页');
+			    }
+			});
+			
+		});
+	</script>
+
+</html>

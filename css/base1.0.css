@@ -1,0 +1,922 @@
+﻿/* reset */
+
+
+/* 防止用户自定义背景颜色对网页的影响，添加让用户可以自定义字体 */
+
+html {
+	color: #333;
+	background: #fff;
+	-webkit-text-size-adjust: 100%;
+	-ms-text-size-adjust: 100%;
+}
+
+
+/* 内外边距通常让各个浏览器样式的表现位置不同 */
+
+body,
+div,
+dl,
+dt,
+dd,
+ul,
+ol,
+li,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+pre,
+code,
+form,
+fieldset,
+legend,
+input,
+textarea,
+p,
+blockquote,
+th,
+td,
+hr,
+button,
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+	margin: 0;
+	padding: 0;
+}
+
+
+/* 重设 HTML5 标签, IE 需要在 js 中 createElement(TAG) */
+
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+	display: block;
+}
+
+
+/* HTML5 媒体文件跟 img 保持一致 */
+
+audio,
+canvas,
+video {
+	display: inline-block;
+	*display: inline;
+	*zoom: 1;
+}
+
+
+/* 要注意表单元素并不继承父级 font 的问题 */
+
+body,
+button,
+input,
+select,
+textarea {
+	font: 12px/1.5 "\5FAE\8F6F\96C5\9ED1", "Microsoft Yahei", "Hiragino Sans GB", tahoma, arial, "\5B8B\4F53";
+	-webkit-font-smoothing: antialiased;
+}
+
+input,
+select,
+textarea {
+	font-size: 100%;
+}
+
+
+/* 去掉各 table cell 的边距并让其边重合 */
+
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+
+/* IE bug fixed: th 不继承 text-align */
+
+th {
+	text-align: inherit;
+}
+
+
+/* 去除默认边框 */
+
+fieldset,
+img {
+	border: 0;
+}
+
+
+/* ie6 7 8(q) bug 显示为行内表现 */
+
+iframe {
+	display: block;
+	width: 100%;
+	border: none;
+}
+
+
+/* 去掉 firefox 下此元素的边框 */
+
+abbr,
+acronym {
+	border: 0;
+	font-variant: normal;
+}
+
+
+/* 一致的 del 样式 */
+
+del {
+	text-decoration: line-through;
+}
+
+i {
+	font-style: normal;
+}
+
+address,
+caption,
+cite,
+code,
+dfn,
+em,
+th,
+var {
+	font-style: normal;
+	font-weight: 500;
+}
+
+
+/* 对齐是排版最重要的因素, 别让什么都居中 */
+
+caption,
+th {
+	text-align: left;
+}
+
+
+/* 来自yahoo, 让标题都自定义, 适应多个系统应用 */
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	font-size: 100%;
+	font-weight: 500;
+	color: #000;
+}
+
+h1 {
+	font-size: 24px;
+}
+
+h2 {
+	font-size: 16px;
+}
+
+h3,
+h4,
+h5,
+h6 {
+	font-size: 14px;
+}
+
+img {
+	vertical-align: bottom;
+}
+
+
+/* 解决ie下重复最后字符 */
+
+q:before,
+q:after {
+	content: '';
+}
+
+
+/*ul,ol*/
+
+ul,
+ol {
+	list-style: none;
+}
+
+
+/* 默认不显示下划线，保持页面简洁 */
+
+ins,
+a {
+	text-decoration: none;
+}
+
+a {
+	-webkit-transition: all .2s;
+	-moz-transition: all .2s;
+	-ms-transition: all .2s;
+	-o-transition: all .2s;
+}
+
+a,
+a:link,
+a:visited,
+a:hover {
+	color: #333;
+}
+
+
+/*清浮动*/
+
+.xx-clear:after {
+	visibility: hidden;
+	display: block;
+	font-size: 0;
+	content: "";
+	clear: both;
+	height: 0;
+}
+
+
+/* for IE6 IE7 */
+
+.xx-clear {
+	zoom: 1;
+}
+
+
+/* 隐藏, 通常用来与 JS 配合 */
+
+body .xx-hide {
+	display: none;
+}
+
+
+/* inline对齐方式 */
+
+.xx-align-right {
+	text-align: right;
+}
+
+.xx-align-left {
+	text-align: left;
+}
+
+.xx-align-center {
+	text-align: center;
+}
+
+
+/* 设置内联, 减少浮动带来的bug */
+
+.xx-left,
+.xx-right {
+	display: inline;
+}
+
+.xx-left {
+	float: left !important;
+}
+
+.xx-right {
+	float: right !important;
+}
+
+.xx-contant {
+	width: 100%;
+	min-width: 1200px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.xx-img-width100 {
+	width: 100%;
+}
+
+
+/*xxbb栅格系统  	*width: 1000px;兼容ie7*/
+
+.xx-row {
+	width: 1200px;
+	margin-left: auto;
+	margin-right: auto;
+	zoom: 1;
+	*width: 1200px;
+	position: relative;
+}
+
+.xx-row:after {
+	visibility: hidden;
+	display: block;
+	font-size: 0;
+	content: " ";
+	clear: both;
+	height: 0;
+}
+
+.xx-row .xx-pc-cell1,
+.xx-pc-cell2,
+.xx-pc-cell3,
+.xx-pc-cell4,
+.xx-pc-cell5,
+.xx-pc-cell6,
+.xx-pc-cell7,
+.xx-pc-cell8,
+.xx-pc-cell9,
+.xx-pc-cell10,
+.xx-pc-cell11,
+.xx-pc-cell12 {
+	float: left;
+	display: inline;
+}
+
+.xx-row .xx-pc-cell1 {
+	width: 8.3333%;
+	*width: 83.3333px;
+}
+
+.xx-row .xx-pc-cell2 {
+	width: 16.6666%;
+	*width: 169.6666px;
+}
+
+.xx-row .xx-pc-cell3 {
+	width: 24.9999%;
+	*width: 249.9999px;
+}
+
+.xx-row .xx-pc-cell4 {
+	width: 33.3332%;
+	*width: 333.3333;
+}
+
+.xx-row .xx-pc-cell5 {
+	width: 41.6665%;
+	*width: 416.665px;
+}
+
+.xx-row .xx-pc-cell6 {
+	width: 49.9998%;
+	*width: 499.998px;
+}
+
+.xx-row .xx-pc-cell7 {
+	width: 58.3331%;
+	*width: 583.331px;
+}
+
+.xx-row .xx-pc-cell8 {
+	width: 66.6664%;
+	*width: 666.664px;
+}
+
+.xx-row .xx-pc-cell9 {
+	width: 74.9997%;
+	*width: 749.997px;
+}
+
+.xx-row .xx-pc-cell10 {
+	width: 83.333%;
+	*width: 833.33px;
+}
+
+.xx-row .xx-pc-cell11 {
+	width: 91.6663%;
+	*width: 916.663px;
+}
+
+.xx-row .xx-pc-cell12 {
+	width: 100%;
+	*width: 1000px;
+}
+
+.xx-row .xx-row-last {
+	margin-right: 0 !important;
+}
+
+.xx-row .xx-pc-col-ml1 {
+	margin-left: 8.3333%;
+}
+
+.xx-row .xx-pc-col-ml2 {
+	margin-left: 16.6666%;
+}
+
+.xx-row .xx-pc-col-ml3 {
+	margin-left: 24.9999%;
+}
+
+.xx-row .xx-pc-col-ml4 {
+	margin-left: 33.3332%;
+}
+
+.xx-row .xx-pc-col-ml5 {
+	margin-left: 41.6665%;
+}
+
+.xx-row .xx-pc-col-ml6 {
+	margin-left: 49.9998%;
+}
+
+.xx-row .xx-pc-col-ml7 {
+	margin-left: 58.3331%;
+}
+
+.xx-row .xx-pc-col-ml8 {
+	margin-left: 66.6664%;
+}
+
+.xx-row .xx-pc-col-ml9 {
+	margin-left: 74.9997%;
+}
+
+.xx-row .xx-pc-col-ml10 {
+	margin-left: 83.333%;
+}
+
+.xx-row .xx-pc-col-ml11 {
+	margin-left: 91.6663%;
+}
+
+
+/*index nav active*/
+
+.xx-nav-active {
+	background-color: #3c8fff !important;
+	color: #fff !important;
+}
+
+
+/*xx字体公共大小*/
+
+.xx-font-size-14 {
+	font-size: 14px;
+}
+
+.xx-font-size-16 {
+	font-size: 16px;
+}
+
+.xx-font-size-18 {
+	font-size: 18px;
+}
+
+.xx-font-size-20 {
+	font-size: 20px;
+}
+
+.xx-font-size-22 {
+	font-size: 22px;
+}
+
+.xx-font-size-24 {
+	font-size: 24px;
+}
+
+.xx-font-size-26 {
+	font-size: 26px;
+}
+
+.xx-font-size-28 {
+	font-size: 28px;
+}
+
+.xx-font-size-30 {
+	font-size: 30px;
+}
+
+.xx-font-size-32 {
+	font-size: 32px;
+}
+
+.xx-font-size-54 {
+	font-size: 54px;
+}
+
+
+/*xx字体颜色*/
+
+.xx-font-color-fff {
+	color: #fff;
+}
+
+.xx-font-color-444 {
+	color: #444;
+}
+
+.xx-font-color-b6b6b6 {
+	color: #b6b6b6;
+}
+
+.xx-font-color-d4282d {
+	color: #d4282d;
+}
+
+.xx-font-color-d4282d {
+	color: #d4282d;
+}
+
+.xx-font-color-b1b1b1 {
+	color: #b1b1b1;
+}
+
+.xx-font-color-ff5a75 {
+	color: #ff5a75;
+}
+
+.xx-font-color-1e98ff {
+	color: #1e98ff;
+}
+
+.xx-font-color-ff4a4a {
+	color: #ff4a4a;
+}
+
+
+/*xx背景颜色*/
+
+.xx-background-color-35393f {
+	background-color: #35393f;
+}
+
+.xx-background-color-fff {
+	background-color: #fff;
+}
+
+
+/*xx下划线*/
+
+.xx-bottom-line:after {
+	content: "";
+	display: block;
+	height: 1px;
+	background-color: #eeeeee;
+}
+
+
+/*xx上划线*/
+
+.xx-top-line:after {
+	content: "";
+	display: block;
+	height: 1px;
+	background-color: #eeeeee;
+}
+
+
+/*xx内边距上*/
+
+.xx-padding-top-10 {
+	padding-top: 10px;
+}
+
+.xx-padding-top-20 {
+	padding-top: 20px;
+}
+
+.xx-padding-top-30 {
+	padding-top: 30px;
+}
+
+.xx-padding-top-40 {
+	padding-top: 40px;
+}
+
+.xx-padding-top-50 {
+	padding-top: 50px;
+}
+
+.xx-padding-top-100 {
+	padding-top: 100px;
+}
+
+.xx-padding-top-180 {
+	padding-top: 180px;
+}
+
+
+/*xx内边距下*/
+
+.xx-padding-bottom-10 {
+	padding-bottom: 10px;
+}
+
+.xx-padding-bottom-20 {
+	padding-bottom: 20px;
+}
+
+.xx-padding-bottom-30 {
+	padding-bottom: 30px;
+}
+
+.xx-padding-bottom-40 {
+	padding-bottom: 40px;
+}
+
+.xx-padding-bottom-50 {
+	padding-bottom: 50px;
+}
+
+
+/*xx内边距右边*/
+
+.xx-padding-right-5 {
+	padding-right: 5px;
+}
+
+.xx-padding-right-10 {
+	padding-right: 10px;
+}
+
+.xx-padding-right-20 {
+	padding-right: 20px;
+}
+
+.xx-padding-right-30 {
+	padding-right: 30px;
+}
+
+.xx-padding-right-40 {
+	padding-right: 40px;
+}
+
+.xx-padding-right-50 {
+	padding-right: 50px;
+}
+
+
+/*xx内边距左边*/
+
+.xx-padding-left-5 {
+	padding-left: 5px;
+}
+
+.xx-padding-left-10 {
+	padding-left: 10px;
+}
+
+.xx-padding-left-20 {
+	padding-left: 20px;
+}
+
+.xx-padding-left-30 {
+	padding-left: 30px;
+}
+
+.xx-padding-left-40 {
+	padding-left: 40px;
+}
+
+.xx-padding-left-50 {
+	padding-left: 50px;
+}
+
+
+/*xx外边距上*/
+
+.xx-margin-top-10 {
+	margin-top: 10px;
+}
+
+.xx-margin-top-20 {
+	margin-top: 20px;
+}
+
+.xx-margin-top-30 {
+	margin-top: 30px;
+}
+
+.xx-margin-top-40 {
+	margin-top: 40px;
+}
+
+.xx-margin-top-50 {
+	margin-top: 50px;
+}
+
+.xx-margin-top-60 {
+	margin-top: 60px;
+}
+
+.xx-margin-top-70 {
+	margin-top: 70px;
+}
+
+.xx-margin-top-80 {
+	margin-top: 80px;
+}
+
+.xx-margin-top-120 {
+	margin-top: 120px;
+}
+
+.xx-margin-top-200 {
+	margin-top: 200px;
+}
+
+
+/*xx外边距下*/
+
+.xx-margin-bottom-10 {
+	margin-bottom: 10px;
+}
+
+.xx-margin-bottom-20 {
+	margin-bottom: 20px;
+}
+
+.xx-margin-bottom-30 {
+	margin-bottom: 30px;
+}
+
+.xx-margin-bottom-40 {
+	margin-bottom: 40px;
+}
+
+.xx-margin-bottom-50 {
+	margin-bottom: 50px;
+}
+
+
+/*xx外边距左*/
+
+.xx-margin-left-10 {
+	margin-left: 10px;
+}
+
+.xx-margin-left-20 {
+	margin-left: 20px;
+}
+
+.xx-margin-left-30 {
+	margin-left: 30px;
+}
+
+.xx-margin-left-40 {
+	margin-left: 40px;
+}
+
+.xx-margin-left-50 {
+	margin-left: 50px;
+}
+
+
+/*xx外边距右*/
+
+.xx-margin-right-5 {
+	margin-right: 5px;
+}
+
+.xx-margin-right-10 {
+	margin-right: 10px;
+}
+
+.xx-margin-right-20 {
+	margin-right: 20px;
+}
+
+.xx-margin-right-30 {
+	margin-right: 30px;
+}
+
+.xx-margin-right-40 {
+	margin-right: 40px;
+}
+
+.xx-margin-right-50 {
+	margin-right: 50px;
+}
+
+
+/*xx表单*/
+
+input,
+select,
+option,
+textarea {
+	outline: none;
+	font-size: 14px;
+	border: none;
+	color: #6d6d6d;
+	-webkit-appearance: none;
+	/*去除系统默认的样式*/
+	-webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+	/* 点击去除高亮的颜色*/
+	background-color: #fff;
+	/*当input框禁止输入的时候会有一个灰色的底色 项目需要我设置了 白色底 跟页面背景一个颜色。*/
+}
+
+
+/*季节*/
+
+@keyframes snow {
+	0% {
+		background-position: 0 0, 0 0;
+	}
+	100% {
+		background-position: 500px 500px, 1000px 500px;
+	}
+}
+
+.season {
+	position: fixed;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	background: url(../img/snow1.png), url(../img/snow2.png);
+	animation: snow 13s linear infinite;
+	-moz-animation: snow 13s linear infinite;
+	-webkit-animation: snow 13s linear infinite;
+	pointer-events: none;
+	z-index: 3;
+}
+
+
+/*---滚动条默认显示样式--*/
+
+::-webkit-scrollbar-thumb {
+	background-color: #018EE8;
+	outline-offset: -2px;
+	outline: 2px solid #fff;
+	-webkit-border-radius: 4px;
+	border: 2px solid #fff;
+	transition: 1s all;
+	-moz-transition: 1s all;
+	-webkit-transition: 1s all;
+}
+
+
+/*---鼠标点击滚动条显示样式--*/
+
+::-webkit-scrollbar-thumb:hover {
+	background-color: #FB4446;
+	-webkit-border-radius: 4px;
+}
+
+
+/*---滚动条大小--*/
+
+::-webkit-scrollbar {
+	width: 8px;
+	height: 8px;
+}
+
+
+/*---滚动框背景样式--*/
+
+::-webkit-scrollbar-track-piece {
+	-webkit-border-radius: 0;
+}
+
+
+/*返回顶部*/
+
+.return-scrolltop {
+	position: fixed;
+	right: 50px;
+	bottom: 200px;
+	cursor: pointer;
+	z-index: 999;
+	width: 50px;
+	height: 50px;
+	border-radius: 50%;
+	box-shadow: 0 0 20px 1px #aed5f4;
+	text-align: center;
+	background-color: #fff;
+}
+
+.return-scrolltop img {
+	width: 30px;
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 10px;
+}
+
+.Validform_wrong {
+	color: #ff4c4c !important;
+}
+
+.Validform_right {
+	color: #45d045 !important;
+}

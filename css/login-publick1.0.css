@@ -1,0 +1,187 @@
+/*登陆注册*/
+html,
+body {
+	height: 100%;
+	background: url(../img/packbondingBg.jpg) no-repeat;
+	background-size: auto 100%;
+	position: relative;
+}
+
+.padk-bindcon {
+	height: 100%;
+}
+
+.padk-bindmess {
+	position: absolute;
+	width: 520px;
+	background-color: #fff;
+	border-radius: 10px;
+	left: 50%;
+	top: 50%;
+	transform: translate(-50%, -50%);
+	-moz-transform: translate(-50%, -50%);
+	-webkit-transform: translate(-50%, -50%);
+	overflow: hidden;
+}
+
+.padk-bindmesstop {
+	width: 430px;
+	height: 40px;
+	line-height: 40px;
+	margin: 35px auto 45px;
+	background-color: #eeeeee;
+	border-radius: 20px;
+	overflow: hidden;
+	position: relative;
+}
+
+.padk-bindmesstop ul li {
+	float: left;
+	width: 50%;
+	color: #bbbbbb;
+	cursor: pointer;
+	transition: all .3s;
+	-moz-transition: all .3s;
+	-webkit-transition: all .3s;
+}
+
+.padk-bindmesstop ul li:hover {
+	color: #ffffff;
+}
+
+.padk-bindmesstop-choose {
+	width: 50%;
+	height: 40px;
+	line-height: 40px;
+	background: #3c8fff;
+	border-radius: 20px;
+	position: absolute;
+	left: 0;
+	top: 0;
+	color: #fff;
+	transition: all .2s linear;
+	-moz-transition: all .2s linear;
+	-webkit-transition: all .2s linear;
+}
+
+.padk-bindmessbott {
+	width: 420px;
+	margin: 0 auto 90px;
+	padding-left: 10px;
+}
+
+.padk-input-item {
+	margin-top: 50px;
+	position: relative;
+}
+
+.padk-input-item label {
+	color: #cdcdcd;
+	display: block;
+	position: absolute;
+	font-size: 15px;
+	top: -8px;
+	left: 0;
+	transition: all .2s linear;
+	-moz-transition: all .2s linear;
+	-webkit-transition: all .2s linear;
+	cursor: text;
+}
+
+.padk-input-item .padk-input-block input {
+	width: 310px;
+	border-bottom: 1px solid #e8e8e8;
+	text-indent: 2px;
+	transition: all 1s;
+	-moz-transition: all 1s;
+	-webkit-transition: all 1s;
+}
+
+.padk-getcode {
+	width: 100px;
+	height: 35px;
+	position: absolute;
+	right: 0;
+	top: -15px;
+}
+
+.padk-getcode div {
+	width: 100px;
+	height: 35px;
+	line-height: 35px;
+	text-align: center;
+	font-size: 14px;
+	outline: none;
+	border: none;
+	background-color: #74b0ff;
+	cursor: pointer;
+	color: #fff;
+	transition: all .3s;
+	-moz-transition: all .3s;
+	-webkit-transition: all .3s;
+	border-radius: 3px;
+}
+
+.padk-enter {
+	width: 295px;
+	height: 45px;
+	line-height: 45px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.padk-enter input {
+	width: 295px;
+	height: 45px;
+	background-color: #75b0ff;
+	color: #fff;
+	border-radius: 45px;
+	transition: all .3s;
+	-moz-transition: all .3s;
+	-webkit-transition: all .3s;
+	cursor: pointer;
+	font-size: 16px;
+}
+
+.padk-enter input:hover {
+	background-color: #3689f9;
+}
+
+.pack-copyright {
+	position: absolute;
+	bottom: 10px;
+	width: 100%;
+	text-align: center;
+}
+
+.thirdparty-logo {
+	width: 100%;
+	height: 50px;
+	line-height: 50px;
+	position: absolute;
+	bottom: 0;
+	background-color: #eeeeee;
+}
+
+.thirdparty-logo .register a {
+	color: #3c8fff;
+}
+
+.thirdparty-logo .thirdparty-logoimg i {
+	font-size: 30px;
+	margin-bottom: 10px;
+	margin-right: 10px;
+	cursor: pointer;
+	transition: all .3s;
+	-moz-transition: all .3s;
+	-webkit-transition: all .3s;
+	color: #b2b2b2;
+}
+
+.thirdparty-logo .thirdparty-logoimg i:hover {
+	color: #3689f9;
+}
+
+.xx-font-color-75b0ff {
+	color: #75b0ff !important;
+}

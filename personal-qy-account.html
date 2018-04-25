@@ -1,0 +1,467 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<meta name="keywords" content="" />
+		<meta name="description" content="" />
+		<title>企业账号信息</title>
+		<link rel="stylesheet" type="text/css" href="css/base1.0.css" />
+		<link rel="stylesheet" type="text/css" href="css/personal-publick1.0.css" />
+		<link rel="stylesheet" type="text/css" href="css/iconfont.css" />
+		<style type="text/css">
+			/*个人信息设置*/
+			
+			.acc-title i {
+				float: left;
+				display: block;
+				height: 25px;
+				width: 3px;
+				background-color: #3291ec;
+				margin-top: 2.5px;
+				margin-right: 5px;
+			}
+			
+			.acc-gr-message>div:nth-last-of-type(1) img {
+				width: 200px;
+				height: 90px;
+			}
+			
+			.acc-gr-messleft li {
+				margin-top: 5px;
+			}
+			/*企业信息*/
+			
+			.acc-qy-message {
+				position: relative;
+				height: 150px;
+			}
+			
+			.acc-qy-message ul {
+				position: absolute;
+				width: 996px;
+				left: -30px;
+				top: 30px;
+			}
+			
+			.acc-qy-message ul li {
+				height: 35px;
+				line-height: 35px;
+				position: relative;
+			}
+			
+			.acc-qy-message ul li:nth-of-type(even) {
+				background-color: #fafafa;
+			}
+			
+			.acc-qy-message ul li span:nth-of-type(1) {
+				float: left;
+				width: 200px;
+				padding-left: 30px;
+			}
+			
+			.modefily {
+				position: absolute;
+				width: 200px;
+				height: 200px;
+				top: 100%;
+				left: 230px;
+				display: none;
+			}
+			
+			.modefilyhover:hover .modefily {
+				display: block;
+			}
+			/*遮罩*/
+			
+			.acc-shadow-con {
+				width: 100%;
+				position: fixed;
+				top: 0;
+				left: 0;
+				z-index: 10000;
+			}
+			
+			.acc-shadow {
+				width: 100%;
+				height: 100%;
+				background-color: #000;
+				opacity: .6;
+			}
+			
+			.acc-mainbind-con {
+				position: absolute;
+				width: 525px;
+				height: 380px;
+				left: 50%;
+				top: 50%;
+				transform: translate(-50%, -50%);
+				-moz-transform: translate(-50%, -50%);
+				-webkit-transform: translate(-50%, -50%);
+				background-color: #fff;
+				border-radius: 10px;
+				overflow: hidden
+			}
+			
+			.acc-mainbind {}
+			
+			.acc-mainbind h3 {
+				width: 420px;
+				height: 70px;
+				line-height: 70px;
+				border-bottom: 1px solid #eeeeee;
+				margin-left: auto;
+				margin-right: auto;
+				position: relative;
+			}
+			
+			.acc-mainbind i {
+				position: absolute;
+				right: 20px;
+				top: 10px;
+				cursor: pointer;
+				color: #40AFFE;
+				transition: all .5s;
+				-moz-transition: all .5s;
+				-webkit-transition: all .5s
+			}
+			
+			.acc-mainbind i:hover {
+				transform: rotateZ(180deg);
+				-moz-transform: rotateZ(180deg);
+				-webkit-transform: rotateZ(180deg);
+			}
+			
+			.acc-item {
+				width: 470px;
+				height: 35px;
+				margin-left: auto;
+				margin-right: auto;
+				margin-top: 40px;
+			}
+			
+			.acc-item label {
+				float: left;
+				width: 100px;
+				height: 35px;
+				line-height: 35px;
+			}
+			
+			.acc-item .acc-input-block {
+				width: 470px;
+				height: 35px;
+				line-height: 35px;
+			}
+			
+			.acc-item .acc-input-block input {
+				width: 260px;
+				height: 35px;
+				line-height: 35px;
+				text-indent: 10px;
+				border: 1px solid #eeeeee;
+				box-sizing: border-box;
+			}
+			
+			.acc-sendmain {
+				width: 100px;
+				height: 35px;
+				line-height: 35px;
+				outline: none;
+				border: none;
+				background-color: #40AFFE;
+				color: #fff;
+				font-size: 14px;
+				cursor: pointer;
+			}
+			
+			.acc-btn-style {
+				margin-top: 60px;
+				text-align: center;
+			}
+			
+			.acc-btn-style a {
+				display: inline-block;
+				width: 240px;
+				height: 40px;
+				line-height: 40px;
+				background-color: #40AFFE;
+				color: #fff;
+				font-size: 14px;
+				border-radius: 3px;
+				cursor: pointer;
+			}
+			
+			.acc-btn-style a:hover,
+			.acc-sendmain:hover {
+				background-color: #1b99f3;
+			}
+			
+			#accShadowCon .Validform_checktip {
+				display: block;
+				margin-left: 105px;
+			}
+			/*公共字体颜色*/
+			
+			.xx-font-color-fc798c {
+				color: #fc798c !important;
+			}
+			
+			.xx-font-color-42A9FF {
+				color: #42A9FF !important;
+			}
+			
+			.xx-font-color-333 {
+				color: #333 !important;
+			}
+		</style>
+	</head>
+
+	<body>
+		<div class="xx-contant xx-head">
+
+		</div>
+		<div class="xx-contant">
+			<div class="xx-row xx-clear xx-margin-top-40">
+				<div class="per-left xx-left">
+				</div>
+				<div class="per-right xx-right">
+					<div class="per-main">
+						<div class="per-contacts-con">
+							<div class="per-contacts-title">
+								<h3 class="xx-font-size-20">账户信息</h3>
+							</div>
+							<div class="acc-userinso-con">
+								<div class="acc-title xx-clear xx-margin-top-30">
+									<h3 class="xx-left xx-font-size-20"><i></i><b>个人信息设置</b></h3>
+									<a href="javascript:;" class="xx-right xx-margin-top-10 xx-font-color-fc798c" id="changePassBtn">修改密码</a>
+								</div>
+								<div class="acc-gr-message xx-clear xx-margin-top-30">
+									<div class="xx-left">
+										<ul class="acc-gr-messleft xx-font-size-14">
+											<li class="xx-font-size-16"><b>深圳市腾讯计算机系统有限公司</b>
+												<a href="javascript:;" class="xx-font-size-14 xx-font-color-42A9FF xx-margin-left-20" id="changeNickBtn">修改昵称</a>
+											</li>
+											<li class="xx-font-color-99999">用户类型：<span class="xx-font-color-333">企业用户</span></li>
+											<li class="xx-font-color-99999">联系电话：<span class="xx-font-color-333">131000000</span>
+												<a href="javascript:;" class="xx-font-size-14 xx-font-color-42A9FF xx-margin-left-20" id="changePhoneBtn">修改联系方式</a>
+											</li>
+										</ul>
+									</div>
+									<div class="xx-right xx-margin-right-20">
+										<img src="../xxbbQyPc3.0/img/gnfreight.png" alt="" />
+									</div>
+								</div>
+								<div class="acc-title xx-clear xx-margin-top-50">
+									<h3 class="xx-left xx-font-size-20"><i></i><b>企业信息</b></h3>
+								</div>
+								<div class="acc-qy-message">
+									<ul class="xx-font-size-16">
+										<li><span>企业名称</span><span>测试账号</span></li>
+										<li><span>法人名称</span><span>马化腾</span></li>
+										<li><span>企业经营地址</span><span>西康路1255号</span></li>
+										<li>
+											<span class="">企业经营地址</span><span class="modefilyhover"><a href="javascript:;" class="xx-font-size-16 xx-font-color-42A9FF">查看企业营业执照</a><img class="modefily" src="../xxbbQyPc3.0/img/gnfreight.png" alt=""/></span>
+										</li>
+									</ul>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div id="accShadowCon" class="acc-shadow-con xx-hide">
+			<div class="acc-shadow">
+
+			</div>
+			<div id="changePassCon" class="acc-mainbind-con xx-hide">
+				<form id="changePassFrom" action="javascript:;" method="post">
+					<div class="acc-mainbind">
+						<div class="acc-shadtitle">
+							<h3 class="xx-align-center xx-font-size-20"><b>修改密码</b></h3>
+							<i id="closeChangePass" class="iconfont icon-cuo"></i>
+						</div>
+						<div class="acc-shadbott">
+							<div class="acc-item xx-clear">
+								<label>请输入新密码</label>
+								<div class="acc-input-block">
+									<input type="text" name="userpassword" id="" value="" placeholder="请输入密码" datatype="*" nullmsg="请输入密码" sucmsg="密码验证格式通过" />
+								</div>
+							</div>
+							<div class="acc-item xx-clear">
+								<label>再次确认密码</label>
+								<div class="acc-input-block">
+									<input type="text" name="" id="" value="" placeholder="请输入密码" datatype="*" recheck="userpassword" nullmsg="请再输入一次密码！" errormsg="您两次输入的账号密码不一致！" sucmsg="密码验证格式通过"/>
+								</div>
+							</div>
+							<div class="acc-btn-style">
+								<a id="liChangePassBtn" href="javascript:;">立即修改</a>
+							</div>
+						</div>
+					</div>
+				</form>
+			</div>
+			<div id="changeNickCon" class="acc-mainbind-con xx-hide">
+				<form id="changeNickFrom" action="javascript:;" method="post">
+					<div class="acc-mainbind">
+						<div class="acc-shadtitle">
+							<h3 class="xx-align-center xx-font-size-20"><b>修改昵称</b></h3>
+							<i id="closechangeNick" class="iconfont icon-cuo"></i>
+						</div>
+						<div class="acc-shadbott">
+							<div class="acc-item xx-clear">
+								<label>请输入新昵称</label>
+								<div class="acc-input-block">
+									<input type="text" name="" id="" value="" placeholder="请输入昵称" datatype="*" nullmsg="请输入昵称" sucmsg="昵称验证格式通过" />
+								</div>
+							</div>
+							<div class="acc-btn-style">
+								<a id="lichangeNickBtn" href="javascript:;">立即修改</a>
+							</div>
+						</div>
+					</div>
+				</form>
+			</div>
+			<div id="changePhoneCon" class="acc-mainbind-con xx-hide">
+				<form id="changePhoneFrom" action="javascript:;" method="post">
+					<div class="acc-mainbind">
+						<div class="acc-shadtitle">
+							<h3 class="xx-align-center xx-font-size-20"><b>修改联系方式</b></h3>
+							<i id="closeChangePhone" class="iconfont icon-cuo"></i>
+						</div>
+						<div class="acc-shadbott">
+							<div class="acc-item xx-clear">
+								<label>请输入新手机号</label>
+								<div class="acc-input-block">
+									<input type="text" name="" id="" value="" placeholder="请输入手机号" datatype="m" nullmsg="请输入手机号" errormsg="手机号格式输入错误" sucmsg="手机号验证格式通过" />
+								</div>
+							</div>
+							<div class="acc-btn-style">
+								<a id="lichangePhoneBtn" href="javascript:;">立即修改</a>
+							</div>
+						</div>
+					</div>
+				</form>
+			</div>
+		</div>
+		<div class="xx-contant xx-foot">
+
+		</div>
+	</body>
+	<script src="js/jquery-2.1.0.js" type="text/javascript" charset="utf-8"></script>
+	<script src="js/utility3.0.js" type="text/javascript" charset="utf-8"></script>
+	<script src="js/Validform_v5.3.2/Validform_v5.3.2.js" type="text/javascript" charset="utf-8"></script>
+	<script type="text/javascript">
+		$(function() {
+			$('.xx-head').load('xx-nav.html');
+			$('.xx-foot').load('xx-foot.html');
+			$('.per-left').load('personal-nav-left.html');
+
+			$('#accShadowCon').height(getWinHeight());
+
+			//修改密码
+			qyAccOpenBtn('changePassBtn', 'accShadowCon', 'changePassCon');
+			//关闭修改密码
+			qyAccCloseBtn('closeChangePass', 'accShadowCon', 'changePassCon');
+			//密码修改
+			$('#changePassFrom').Validform({
+				btnSubmit: "#liChangePassBtn",
+				btnReset: "", //重置信息按钮
+				tiptype: 3,
+				beforeCheck: function(curform) {
+					//在表单提交执行验证之前执行的函数，curform参数是当前表单对象。
+					//这里明确return false的话将不会继续执行验证操作;	
+				},
+				beforeSubmit: function(curform) {
+					//在验证成功后，表单提交前执行的函数，curform参数是当前表单对象。
+					//这里明确return false的话表单将不会提交;	
+					alert('成功');
+				},
+				callback: function(data) {
+					//返回数据data是json对象，{"info":"demo info","status":"y"}
+					//info: 输出提示信息;
+					//status: 返回提交数据的状态,是否提交成功。如可以用"y"表示提交成功，"n"表示提交失败，在ajax_post.php文件返回数据里自定字符，主要用在callback函数里根据该值执行相应的回调操作;
+					//你也可以在ajax_post.php文件返回更多信息在这里获取，进行相应操作；
+					//ajax遇到服务端错误时也会执行回调，这时的data是{ status:**, statusText:**, readyState:**, responseText:** }；
+
+					//这里执行回调操作;
+					//注意：如果不是ajax方式提交表单，传入callback，这时data参数是当前表单对象，回调函数会在表单验证全部通过后执行，然后判断是否提交表单，如果callback里明确return false，则表单不会提交，如果return true或没有return，则会提交表单。
+				}
+			});
+			//修改昵称
+			qyAccOpenBtn('changeNickBtn', 'accShadowCon', 'changeNickCon');
+			//关闭修改昵称
+			qyAccCloseBtn('closechangeNick', 'accShadowCon', 'changeNickCon');
+			//昵称修改
+			$('#changeNickFrom').Validform({
+				btnSubmit: "#lichangeNickBtn",
+				btnReset: "", //重置信息按钮
+				tiptype: 3,
+				beforeCheck: function(curform) {
+					//在表单提交执行验证之前执行的函数，curform参数是当前表单对象。
+					//这里明确return false的话将不会继续执行验证操作;	
+				},
+				beforeSubmit: function(curform) {
+					//在验证成功后，表单提交前执行的函数，curform参数是当前表单对象。
+					//这里明确return false的话表单将不会提交;	
+					alert('成功');
+				},
+				callback: function(data) {
+					//返回数据data是json对象，{"info":"demo info","status":"y"}
+					//info: 输出提示信息;
+					//status: 返回提交数据的状态,是否提交成功。如可以用"y"表示提交成功，"n"表示提交失败，在ajax_post.php文件返回数据里自定字符，主要用在callback函数里根据该值执行相应的回调操作;
+					//你也可以在ajax_post.php文件返回更多信息在这里获取，进行相应操作；
+					//ajax遇到服务端错误时也会执行回调，这时的data是{ status:**, statusText:**, readyState:**, responseText:** }；
+
+					//这里执行回调操作;
+					//注意：如果不是ajax方式提交表单，传入callback，这时data参数是当前表单对象，回调函数会在表单验证全部通过后执行，然后判断是否提交表单，如果callback里明确return false，则表单不会提交，如果return true或没有return，则会提交表单。
+				}
+			});
+
+			//修改联系方式
+			qyAccOpenBtn('changePhoneBtn', 'accShadowCon', 'changePhoneCon');
+			//关闭修改联系方式
+			qyAccCloseBtn('closeChangePhone', 'accShadowCon', 'changePhoneCon');
+			//手机号修改
+			$('#changePhoneFrom').Validform({
+				btnSubmit: "#lichangePhoneBtn",
+				btnReset: "", //重置信息按钮
+				tiptype: 3,
+				beforeCheck: function(curform) {
+					//在表单提交执行验证之前执行的函数，curform参数是当前表单对象。
+					//这里明确return false的话将不会继续执行验证操作;	
+				},
+				beforeSubmit: function(curform) {
+					//在验证成功后，表单提交前执行的函数，curform参数是当前表单对象。
+					//这里明确return false的话表单将不会提交;	
+					alert('成功');
+				},
+				callback: function(data) {
+					//返回数据data是json对象，{"info":"demo info","status":"y"}
+					//info: 输出提示信息;
+					//status: 返回提交数据的状态,是否提交成功。如可以用"y"表示提交成功，"n"表示提交失败，在ajax_post.php文件返回数据里自定字符，主要用在callback函数里根据该值执行相应的回调操作;
+					//你也可以在ajax_post.php文件返回更多信息在这里获取，进行相应操作；
+					//ajax遇到服务端错误时也会执行回调，这时的data是{ status:**, statusText:**, readyState:**, responseText:** }；
+
+					//这里执行回调操作;
+					//注意：如果不是ajax方式提交表单，传入callback，这时data参数是当前表单对象，回调函数会在表单验证全部通过后执行，然后判断是否提交表单，如果callback里明确return false，则表单不会提交，如果return true或没有return，则会提交表单。
+				}
+			});
+		});
+		//打开封装
+		function qyAccOpenBtn(btn, acccon, confram) {
+			$('#' + btn).click(function() {
+				$('#' + acccon).fadeIn();
+				$('#' + confram).fadeIn();
+			});
+		}
+		//关闭封装
+		function qyAccCloseBtn(btn, acccon, confram) {
+			$('#' + btn).click(function() {
+				$('#' + acccon).fadeOut();
+				$('#' + confram).fadeOut();
+			});
+		}
+	</script>
+
+</html>

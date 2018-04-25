@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<meta name="keywords" content="" />
+		<meta name="description" content="" />
+		<title>用户管理</title>
+		<link rel="stylesheet" type="text/css" href="css/base1.0.css" />
+		<link rel="stylesheet" type="text/css" href="css/personal-publick1.0.css" />
+		<style type="text/css">
+			
+		</style>
+	</head>
+
+	<body>
+		<div class="xx-contant xx-head">
+
+		</div>
+		<div class="xx-contant">
+			<div class="xx-row xx-clear xx-margin-top-40">
+				<div class="per-left xx-left">
+
+				</div>
+				<div class="per-right xx-right">
+					<div class="per-main">
+						<div class="per-contacts-con">
+							<div class="per-contacts-title">
+								<h3 class="xx-font-size-20">用户管理</h3>
+							</div>
+							<div class="usma-tab-choose xx-margin-top-30">
+								<ul id="usmaTabChoose" class="xx-clear xx-font-size-18">
+									<li>
+										<b>关联用户</b>
+										<i></i>
+									</li>
+									<li>
+										<b>关联订单</b>
+										<i></i>
+									</li>
+								</ul>
+							</div>
+							<div id="usmaTable" class="usma-table-con">
+								<div class="usma-table">
+									<div class="usma-search xx-margin-top-40">
+										<input type="text" name="" id="" value="" placeholder="会员编号|手机号|账号" />
+										<button type="button">查询</button>
+									</div>
+									<p class="xx-font-size-14 xx-margin-top-20">用户数量总数：65</p>
+									<table border="0" cellspacing="0" cellpadding="0" class="xx-font-size-14 xx-margin-top-10">
+										<tr>
+											<th>用户账户</th>
+											<th>手机号</th>
+											<th>会员编号</th>
+											<th>订单数量</th>
+											<th>金额</th>
+										</tr>
+										<tr>
+											<td>123</td>
+											<td>123</td>
+											<td>123</td>
+											<td>123</td>
+											<td>1500元</td>
+										</tr>
+										<tr>
+											<td>123</td>
+											<td>123</td>
+											<td>123</td>
+											<td>123</td>
+											<td>1500元</td>
+										</tr>
+										<tr>
+											<td>123</td>
+											<td>123</td>
+											<td>123</td>
+											<td>123</td>
+											<td>1500元</td>
+										</tr>
+										<tr>
+											<td>123</td>
+											<td>123</td>
+											<td>123</td>
+											<td>123</td>
+											<td>1500元</td>
+										</tr>
+									</table>
+								</div>
+								<div class="usma-table">
+									<div class="usma-search xx-margin-top-40">
+										<input type="text" name="" id="" value="" placeholder="会员编号|手机号|账号" />
+										<button type="button">查询</button>
+									</div>
+									<p class="xx-font-size-14 xx-margin-top-20"><span>用户数量总数：65</span> <span class="xx-padding-left-20">订单金额：65656656</span></p>
+									<table border="0" cellspacing="0" cellpadding="0" class="xx-font-size-14 xx-margin-top-10">
+										<tr>
+											<th>订单编号</th>
+											<th>产品名称</th>
+											<th>会员编号</th>
+											<th>金额</th>
+										</tr>
+										<tr>
+											<td>123</td>
+											<td>中老年人骨折险</td>
+											<td>123</td>
+											<td>123</td>
+										</tr>
+										<tr>
+											<td>123</td>
+											<td>中老年人骨折险</td>
+											<td>123</td>
+											<td>123</td>
+										</tr>
+										<tr>
+											<td>123</td>
+											<td>中老年人骨折险</td>
+											<td>123</td>
+											<td>123</td>
+										</tr>
+										<tr>
+											<td>123</td>
+											<td>中老年人骨折险</td>
+											<td>123</td>
+											<td>123</td>
+										</tr>
+										<tr>
+											<td>123</td>
+											<td>中老年人骨折险</td>
+											<td>123</td>
+											<td>123</td>
+										</tr>
+										<tr>
+											<td>123</td>
+											<td>中老年人骨折险</td>
+											<td>123</td>
+											<td>123</td>
+										</tr>
+									</table>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="xx-contant xx-foot">
+
+		</div>
+	</body>
+	<script src="js/jquery-2.1.0.js" type="text/javascript" charset="utf-8"></script>
+	<script src="js/utility3.0.js" type="text/javascript" charset="utf-8"></script>
+	<script type="text/javascript">
+		$(function() {
+			$('.xx-head').load('xx-nav.html');
+			$('.xx-foot').load('xx-foot.html');
+			$('.per-left').load('personal-nav-left.html');
+
+			//用户选择
+			//初始化
+			var usmaindex = 0;
+
+			$('#usmaTabChoose li').eq(usmaindex).addClass('active');
+			$('#usmaTabChoose i').eq(usmaindex).fadeIn();
+			$('#usmaTable .usma-table').eq(usmaindex).fadeIn();
+
+			$('#usmaTabChoose li').each(function(index, ele) {
+				$(this).click(function() {
+					usmaindex = index;
+					$('#usmaTabChoose li').removeClass('active');
+					$('#usmaTabChoose i').hide();
+					$('#usmaTable .usma-table').hide();
+					$('#usmaTabChoose li').eq(usmaindex).addClass('active');
+					$('#usmaTabChoose i').eq(usmaindex).fadeIn();
+					$('#usmaTable .usma-table').eq(usmaindex).fadeIn();
+				});
+			});
+		});
+	</script>
+
+</html>

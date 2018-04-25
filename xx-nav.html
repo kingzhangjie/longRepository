@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			/*导航*/
+			
+			.xx-head-top {
+				height: 35px;
+				line-height: 35px;
+			}
+			
+			.xx-head-top .top-left li,
+			.xx-head-top .xx-right li {
+				float: left;
+				margin-right: 38px;
+				position: relative;
+			}
+			
+			.xx-head-top .top-left li a,
+			.xx-head-top .xx-right li a {
+				color: #d8d9da;
+			}
+			
+			.xx-head-top .top-left li a:hover,
+			.xx-head-top .xx-right li a:hover {
+				color: #fff;
+			}
+			
+			.xx-top-code {
+				position: absolute;
+				top: 100%;
+				left: 0;
+			}
+			
+			.xx-top-code img {
+				height: 85px;
+				width: 85px;
+			}
+			
+			.xx-nav h1 img {
+				width: 150px;
+				margin-top: 15px;
+			}
+			
+			.xx-nav .xx-nav-center,
+			.xx-nav .xx-nav-right {
+				height: 85px;
+				line-height: 85px;
+			}
+			
+			.xx-nav .xx-nav-center {
+				margin-left: 230px;
+			}
+			
+			.xx-nav .xx-nav-center li {
+				float: left;
+				margin-right: 50px;
+				position: relative;
+			}
+			
+			.xx-nav .xx-nav-center li a:hover {
+				color: #3c8fff;
+			}
+			.xx-nav .xx-nav-center li a{
+				display: inline-block;
+			}
+			.xx-nav-center-selectcon {
+				width: 1300px;
+				position: absolute;
+				z-index: 999;
+				left: -485px;
+				background-color: #f9f9f9;
+				display: none;
+			}
+			
+			.xx-nav-center-select {
+				width: 1200px;
+				margin-left: auto;
+				margin-right: auto;
+			}
+			
+			.xx-nav-center-select ul {
+				width: 90%;
+			}
+			
+			.xx-nav-center-select li {
+				width: 12%;
+				float: left;
+				cursor: pointer;
+				margin-right: 1%;
+				line-height: initial;
+			}
+			
+			.xx-nav-center-select li h3 {
+				width: 100%;
+				overflow: hidden;
+				text-overflow: ellipsis;
+				white-space: nowrap;
+			}
+			
+			.xx-nav-center-select li img {
+				width: 100%;
+				height: 100px;
+			}
+			
+			.xx-nav-tselecthover {
+				position: relative;
+			}
+			
+			.xx-nav-tselect {
+				position: absolute;
+				z-index: 999;
+				left: 0;
+				top: 70px;
+				width: 250px;
+				background-color: #fff !important;
+				border: 1px solid #d6d6d6;
+				box-shadow: 0 0 4px rgba(0, 0, 0, .16);
+				border-radius: 4px;
+				overflow: hidden;
+				text-indent: 20px;
+			}
+			
+			.xx-nav-tselect li {
+				height: 40px;
+				line-height: 40px;
+				margin-right: 0 !important;
+				width: 100%;
+			}
+			
+			.xx-nav-tselect li a {
+				display: block;
+				width:100%;
+				margin-left: -20px;
+			}
+			
+			.xx-nav-tselect li a:hover {
+				color: #fff !important;
+				background-color: #3c8fff;
+			}
+			
+			.xx-pro-addmore {
+				width: 10%;
+				cursor: pointer;
+			}
+			
+			.xx-pro-addmore p {
+				line-height: initial;
+			}
+			
+			.xx-nav .xx-nav-right a {
+				background-color: #3c8fff;
+				padding: 8px 12px;
+				border-radius: 3px;
+				color: #fff;
+			}
+			
+			.xx-nav .xx-nav-right a:hover {
+				background-color: #1d75eb;
+			}
+			
+			.xx-personal-hover {
+				display: inline-block;
+				height: 20px;
+				line-height: 20px;
+				position: relative;
+			}
+			
+			.xx-personal-hover img {
+				float: right;
+				width: 15px;
+				margin-left: 5px;
+				margin-top: 2px;
+			}
+			
+			.xx-personal {
+				position: absolute;
+				z-index: 999;
+				top: 70px;
+				width: 92px;
+				background-color: #fff !important;
+				border: 1px solid #d6d6d6;
+				box-shadow: 0 0 4px rgba(0, 0, 0, .16);
+				border-radius: 4px;
+				overflow: hidden;
+			}
+			
+			.xx-personal li {
+				width: 100%;
+			}
+			
+			.xx-personal li a {
+				height: 20px;
+				line-height: 20px;
+				display: block;
+				text-align: center;
+				background-color: initial !important;
+				color: #000000 !important;
+			}
+			
+			.xx-personal li a:hover {
+				background-color: #3c8fff !important;
+				color: #fff !important;
+				border-radius: 0 !important;
+			}
+			
+			.xx-nav-fixed {
+				position: fixed;
+				top: -100px;
+				left: 0;
+				width: 100%;
+				z-index: 9999;
+				background-color: #fff;
+				box-shadow: 0 0 20px 1px #dddddd;
+				transition: .3s all;
+				-moz-transition: .3s all;
+				-webkit-transition: .3s all;
+			}
+		</style>
+	</head>
+
+	<body>
+		<div id="xx-head">
+			<div id="NavFixed" class="xx-nav-fixed">
+				<div class="xx-row">
+					<div class="xx-nav xx-clear">
+						<h1 class="xx-left"><img src="img/logo.png" alt="" /></h1>
+						<ul class="xx-nav-center xx-left xx-font-size-16">
+							<li>
+								<a href="">首页</a>
+							</li>
+							<li>
+								<a class="product-center" href="">产品中心</a>
+								<div class="xx-nav-center-selectcon xx-clear">
+									<div class="xx-nav-center-select xx-padding-top-20">
+										<ul class="xx-left xx-clear">
+											<li class="xx-margin-bottom-20">
+												<img src="img/jachengxianproduct.png" alt="" />
+												<h3 class="xx-font-size-14 xx-align-center xx-margin-top-10">无人机第三方责任险猝死猝死</h3>
+												<div class="xx-padding-right-10 xx-proprice xx-font-size-14 xx-font-color-d4282d xx-align-center">
+													￥<b class="xx-padding-right-5 xx-padding-left-5 xx-font-size-16">45</b>起
+												</div>
+											</li>
+											<li class="xx-margin-bottom-20">
+												<img src="img/jachengxianproduct.png" alt="" />
+												<h3 class="xx-font-size-14 xx-align-center xx-margin-top-10">无人机第三方责任险</h3>
+												<div class="xx-padding-right-10 xx-proprice xx-font-size-14 xx-font-color-d4282d xx-align-center">
+													￥<b class="xx-padding-right-5 xx-padding-left-5 xx-font-size-16">45</b>起
+												</div>
+											</li>
+										</ul>
+										<div class="xx-right xx-pro-addmore xx-align-center">
+											<img src="img/referral01.png" alt="" />
+											<p class="xx-margin-top-20">查看更多</p>
+										</div>
+									</div>
+								</div>
+							</li>
+							<li>
+								<a class="xx-nav-tselecthover" href="">保险解决方案</a>
+								<ul class="xx-nav-tselect xx-hide">
+									<li>
+										<a href="">母婴保险解决方案</a>
+									</li>
+									<li>
+										<a href="">物流运输保险解决方案</a>
+									</li>
+									<li>
+										<a href="">雇主团险解决方案</a>
+									</li>
+								</ul>
+							</li>
+							<li>
+								<a href="">企业团险</a>
+							</li>
+							<li>
+								<a href="">保险理赔</a>
+							</li>
+						</ul>
+						<div class="xx-nav-right xx-right">
+							<a class="xx-personal-hover" href="" class="xx-margin-right-10">
+								个人中心
+								<img src="img/downarrows.png" alt="" />
+							</a>
+							<ul class="xx-personal xx-hide">
+								<li>
+									<a href="">个人订单</a>
+								</li>
+								<li>
+									<a href="">个人订单</a>
+								</li>
+								<li>
+									<a href="">个人订单</a>
+								</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="xx-background-color-35393f">
+				<div class="xx-row">
+					<div class="xx-head-top">
+						<ul class="top-left xx-left xx-clear">
+							<li>
+								<a href="">关于我们</a>
+							</li>
+							<li>
+								<a href="">联系我们</a>
+							</li>
+							<li>
+								<a href="">全国服务热线：021-35648956</a>
+							</li>
+						</ul>
+						<ul class="top-right xx-right xx-clear">
+							<li>
+								<i class="iconfont icon-shouji" style="color: #fff;"></i>
+								<a href="" class="xx-top-codehove">手机版</a>
+								<div class="xx-top-code xx-hide">
+									<img src="img/qrcode.jpg" alt="" />
+								</div>
+							</li>
+							<li>
+								<a href="">登陆/注册</a>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			<div class="xx-row">
+				<div class="xx-nav xx-clear">
+					<h1 class="xx-left"><img src="img/logo.png" alt="" /></h1>
+					<ul class="xx-nav-center xx-left xx-font-size-16">
+						<li>
+							<a href="">首页</a>
+						</li>
+						<li>
+							<a class="product-center" href="">产品中心</a>
+							<div class="xx-nav-center-selectcon xx-clear">
+								<div class="xx-nav-center-select xx-padding-top-20">
+									<ul class="xx-left xx-clear">
+										<li class="xx-margin-bottom-20">
+											<img src="img/jachengxianproduct.png" alt="" />
+											<h3 class="xx-font-size-14 xx-align-center xx-margin-top-10">无人机第三方责任险</h3>
+											<div class="xx-padding-right-10 xx-proprice xx-font-size-14 xx-font-color-d4282d xx-align-center">
+												￥<b class="xx-padding-right-5 xx-padding-left-5 xx-font-size-16">45</b>起
+											</div>
+										</li>
+										<li class="xx-margin-bottom-20">
+											<img src="img/jachengxianproduct.png" alt="" />
+											<h3 class="xx-font-size-14 xx-align-center xx-margin-top-10">无人机第三方责任险</h3>
+											<div class="xx-padding-right-10 xx-proprice xx-font-size-14 xx-font-color-d4282d xx-align-center">
+												￥<b class="xx-padding-right-5 xx-padding-left-5 xx-font-size-16">45</b>起
+											</div>
+										</li>
+										<li class="xx-margin-bottom-20">
+											<img src="img/jachengxianproduct.png" alt="" />
+											<h3 class="xx-font-size-14 xx-align-center xx-margin-top-10">无人机第三方责任险</h3>
+											<div class="xx-padding-right-10 xx-proprice xx-font-size-14 xx-font-color-d4282d xx-align-center">
+												￥<b class="xx-padding-right-5 xx-padding-left-5 xx-font-size-16">45</b>起
+											</div>
+										</li>
+										<li class="xx-margin-bottom-20">
+											<img src="img/jachengxianproduct.png" alt="" />
+											<h3 class="xx-font-size-14 xx-align-center xx-margin-top-10">无人机第三方责任险</h3>
+											<div class="xx-padding-right-10 xx-proprice xx-font-size-14 xx-font-color-d4282d xx-align-center">
+												￥<b class="xx-padding-right-5 xx-padding-left-5 xx-font-size-16">45</b>起
+											</div>
+										</li>
+										<li class="xx-margin-bottom-20">
+											<img src="img/jachengxianproduct.png" alt="" />
+											<h3 class="xx-font-size-14 xx-align-center xx-margin-top-10">无人机第三方责任险</h3>
+											<div class="xx-padding-right-10 xx-proprice xx-font-size-14 xx-font-color-d4282d xx-align-center">
+												￥<b class="xx-padding-right-5 xx-padding-left-5 xx-font-size-16">45</b>起
+											</div>
+										</li>
+										<li class="xx-margin-bottom-20">
+											<img src="img/jachengxianproduct.png" alt="" />
+											<h3 class="xx-font-size-14 xx-align-center xx-margin-top-10">无人机第三方责任险</h3>
+											<div class="xx-padding-right-10 xx-proprice xx-font-size-14 xx-font-color-d4282d xx-align-center">
+												￥<b class="xx-padding-right-5 xx-padding-left-5 xx-font-size-16">45</b>起
+											</div>
+										</li>
+									</ul>
+									<div class="xx-right xx-pro-addmore xx-align-center">
+										<img src="img/referral01.png" alt="" />
+										<p class="xx-margin-top-20">查看更多</p>
+									</div>
+								</div>
+							</div>
+						</li>
+						<li>
+							<a class="xx-nav-tselecthover" href="">保险解决方案</a>
+							<ul class="xx-nav-tselect xx-hide">
+								<li>
+									<a href="">母婴保险解决方案</a>
+								</li>
+								<li>
+									<a href="">物流运输保险解决方案</a>
+								</li>
+								<li>
+									<a href="">雇主团险解决方案</a>
+								</li>
+							</ul>
+						</li>
+						<li>
+							<a href="">企业团险</a>
+						</li>
+						<li>
+							<a href="">保险理赔</a>
+						</li>
+					</ul>
+					<div class="xx-nav-right xx-right">
+						<a class="xx-personal-hover" href="" class="xx-margin-right-10">
+							个人中心
+							<img src="img/downarrows.png" alt="" />
+						</a>
+						<ul class="xx-personal xx-hide">
+							<li>
+								<a href="">个人订单</a>
+							</li>
+							<li>
+								<a href="">个人订单</a>
+							</li>
+							<li>
+								<a href="">个人订单</a>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+	</body>
+	<script type="text/javascript">
+		//解决方案
+		indeShow('xx-nav-tselecthover');
+		//二维码显示
+		codeHover('xx-top-codehove', 0);
+		//产品中心
+		indeShow('product-center');
+		//个人中心
+		$('.xx-nav-right').each(function(index, ele) {
+			$(this).mouseenter(function() {
+				$(this).find('ul').show();
+			});
+			$(this).mousemove(function() {
+				$(this).find('ul').show();
+			});
+			$(this).find('ul').mousemove(function() {
+				$(this).show();
+			});
+			$(this).find('ul').mouseout(function() {
+				$(this).hide();
+			});
+			$(this).mouseout(function() {
+				$(this).find('ul').hide();
+			});
+		});
+	</script>
+
+</html>

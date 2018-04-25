@@ -1,0 +1,232 @@
+.sparing-url01 {
+	background: url(../img/spriteimg01.png) no-repeat;
+	background-size: 400px 1200px;
+}
+
+.sparing-inhangye {
+	width: 80px;
+	height: 80px;
+	background-position: -1px 0;
+	margin: 0 auto;
+}
+
+.sparing-inqingsong {
+	width: 80px;
+	height: 80px;
+	background-position: -94px 0;
+	margin: 0 auto;
+}
+
+.sparing-inxingjia {
+	width: 80px;
+	height: 80px;
+	background-position: -193px 0;
+	margin: 0 auto;
+}
+
+.sparing-infuww {
+	width: 80px;
+	height: 80px;
+	background-position: -288px 0;
+	margin: 0 auto;
+}
+
+.sparing-inzhongan {
+	width: 180px;
+	height: 70px;
+	background-position: -9px -300px;
+	margin: 0 auto;
+}
+
+.sparing-inzhonganed {
+	width: 180px;
+	height: 70px;
+	background-position: -9px -383px;
+	margin: 0 auto;
+}
+
+.sparing-inpingan {
+	width: 180px;
+	height: 70px;
+	background-position: -212px -300px;
+	margin: 0 auto;
+}
+
+.sparing-inpinganed {
+	width: 180px;
+	height: 70px;
+	background-position: -212px -383px;
+	margin: 0 auto;
+}
+
+.sparing-inrenshou {
+	width: 180px;
+	height: 70px;
+	background-position: -9px -474px;
+	margin: 0 auto;
+}
+
+.sparing-inrenshoued {
+	width: 180px;
+	height: 70px;
+	background-position: -9px -555px;
+	margin: 0 auto;
+}
+
+.sparing-intaikang {
+	width: 180px;
+	height: 70px;
+	background-position: -212px -474px;
+	margin: 0 auto;
+}
+
+.sparing-intaikanged {
+	width: 180px;
+	height: 70px;
+	background-position: -212px -555px;
+	margin: 0 auto;
+}
+
+.sparing-inrenmin {
+	width: 180px;
+	height: 70px;
+	background-position: -9px -637px;
+	margin: 0 auto;
+}
+
+.sparing-inrenmined {
+	width: 180px;
+	height: 70px;
+	background-position: -9px -722px;
+	margin: 0 auto;
+}
+
+.sparing-inyongan {
+	width: 180px;
+	height: 70px;
+	background-position: -212px -637px;
+	margin: 0 auto;
+}
+
+.sparing-inyonganed {
+	width: 180px;
+	height: 70px;
+	background-position: -212px -722px;
+	margin: 0 auto;
+}
+
+.sparing-intaipingyang {
+	width: 180px;
+	height: 70px;
+	background-position: -9px -805px;
+	margin: 0 auto;
+}
+
+.sparing-intaipingyanged {
+	width: 180px;
+	height: 70px;
+	background-position: -9px -890px;
+	margin: 0 auto;
+}
+
+.sparing-inxingfurenshou {
+	width: 180px;
+	height: 70px;
+	background-position: -212px -805px;
+	margin: 0 auto;
+}
+
+.sparing-inxingfurenshoued {
+	width: 180px;
+	height: 70px;
+	background-position: -212px -890px;
+	margin: 0 auto;
+}
+
+.sparing-footbaojianhui {
+	width: 116px;
+	height: 52px;
+	background-position: -10px -244px;
+}
+
+.sparing-footbaoxianxiehui {
+	width: 116px;
+	height: 52px;
+	background-position: -9px -182px;
+}
+
+.sparing-per-messcent-youhujuan {
+	width: 47px;
+	height: 29px;
+	background-position: -308px -193px;
+}
+
+.sparing-ingr-zhuanye {
+	width: 90px;
+	height: 90px;
+	background-position: -9px -85px;
+}
+
+.sparing-ingr-zhineng {
+	width: 90px;
+	height: 90px;
+	background-position: -106px -85px;
+}
+
+.sparing-ingr-gaodi {
+	width: 90px;
+	height: 90px;
+	background-position: -205px -85px;
+}
+
+.sparing-ingr-pinzhi {
+	width: 90px;
+	height: 90px;
+	background-position: -303px -85px;
+}
+
+.sparing-personalcent-gerenzhongxin {
+	display: inline-block;
+	width: 20px;
+	height: 20px;
+	background-position: -140px -265px;
+	vertical-align: sub;
+	margin-right: 5px;
+}
+
+.sparing-personalcent-wodedingdan {
+	display: inline-block;
+	width: 20px;
+	height: 20px;
+	background-position: -215px -268px;
+	vertical-align: sub;
+	margin-right: 5px;
+}
+
+.sparing-personalcent-shenqinglipei {
+	display: inline-block;
+	width: 20px;
+	height: 20px;
+	background-position: -250px -268px;
+	vertical-align: sub;
+	margin-right: 5px;
+}
+
+.sparing-personalcent-kehuzhongxing {
+	display: inline-block;
+	width: 20px;
+	height: 20px;
+	background-position: -177px -266px;
+	vertical-align: sub;
+	margin-right: 5px;
+}
+
+
+.sparing-personalcent-quanyizhongxin {
+	display: inline-block;
+	width: 20px;
+	height: 20px;
+	background-position: -286px -266px;
+	vertical-align: sub;
+	margin-right: 5px;
+}

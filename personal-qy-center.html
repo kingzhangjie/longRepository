@@ -1,0 +1,1045 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<meta name="keywords" content="" />
+		<meta name="description" content="" />
+		<title>个人中心</title>
+		<link rel="stylesheet" type="text/css" href="css/base1.0.css" />
+		<link rel="stylesheet" type="text/css" href="css/personal-publick1.0.css" />
+		<link rel="stylesheet" type="text/css" href="css/iconfont.css" />
+		<style type="text/css">
+			/*遮罩*/
+			.cent-shadow-con {
+				width: 100%;
+				position: fixed;
+				top: 0;
+				left: 0;
+				z-index: 10000;
+			}
+			
+			.cent-shadow {
+				width: 100%;
+				height: 100%;
+				background-color: #000;
+				opacity: .6;
+			}
+			
+			.cent-mainbind-con {
+				position: absolute;
+				width: 800px;
+				left: 50%;
+				top: 50%;
+				transform: translate(-50%, -50%);
+				-moz-transform: translate(-50%, -50%);
+				-webkit-transform: translate(-50%, -50%);
+				background-color: #fff;
+				border-radius: 10px;
+				overflow: hidden
+			}
+			
+			.cent-mainbind {}
+			
+			.cent-mainbind h3 {
+				width: 750px;
+				height: 70px;
+				line-height: 70px;
+				border-bottom: 1px solid #eeeeee;
+				margin-left: auto;
+				margin-right: auto;
+				position: relative;
+			}
+			
+			.cent-mainbind i {
+				position: absolute;
+				right: 20px;
+				top: 10px;
+				cursor: pointer;
+				color: #40AFFE;
+				transition: all .5s;
+				-moz-transition: all .5s;
+				-webkit-transition: all .5s
+			}
+			
+			.cent-mainbind i:hover {
+				transform: rotateZ(180deg);
+				-moz-transform: rotateZ(180deg);
+				-webkit-transform: rotateZ(180deg);
+			}
+			
+			.cent-item {
+				width: 470px;
+				height: 35px;
+				margin-left: auto;
+				margin-right: auto;
+				margin-top: 20px;
+				position: relative;
+			}
+			
+			.cent-item label {
+				float: left;
+				width: 100px;
+				height: 35px;
+				line-height: 35px;
+			}
+			
+			.cent-item .cent-input-block {
+				width: 520px;
+				height: 35px;
+				line-height: 35px;
+			}
+			
+			.cent-item .cent-input-block input {
+				width: 260px;
+				height: 35px;
+				line-height: 35px;
+				text-indent: 10px;
+				border: 1px solid #eeeeee;
+				box-sizing: border-box;
+			}
+			
+			.cent-item .cent-input-block select {
+				width: 260px;
+				height: 35px;
+				line-height: 35px;
+				text-indent: 10px;
+				border: 1px solid #eeeeee;
+				box-sizing: border-box;
+			}
+			
+			.cent-item .cent-input-block select {
+				/*Chrome和Firefox里面的边框是不一样的，所以复写了一下*/
+				/*很关键：将默认的select选择框样式清除*/
+				appearance: none;
+				-moz-appearance: none;
+				-webkit-appearance: none;
+				/*在选择框的最右侧中间显示小箭头图片*/
+				background: url("http://ourjs.github.io/static/2015/arrow.png") no-repeat scroll right center transparent;
+				/*为下拉小箭头留出一点位置，避免被文字覆盖*/
+				padding-right: 14px;
+			}
+			/*清除ie的默认选择框样式清除，隐藏下拉箭头*/
+			
+			.cent-item .cent-input-block select::-ms-expand {
+				display: none;
+			}
+			
+			.cent-shadbott {
+				max-height: 600px;
+				overflow: auto;
+			}
+			
+			.cent-btn-style {
+				margin: 40px 0 50px;
+				text-align: center;
+			}
+			
+			.cent-btn-style a {
+				background-color: #40AFFE;
+				color: #fff;
+				font-size: 14px;
+				cursor: pointer;
+				border-radius: 3px;
+				text-align: center;
+				padding: 10px 40px;
+			}
+			
+			.invoive-choose {
+				position: absolute;
+				left: -120px;
+				top: 0;
+				width: 100px;
+				height: 35px;
+				line-height: 35px;
+				background-color: #75b0ff;
+				text-align: center;
+				border-radius: 3px;
+				color: #fff;
+				cursor: pointer;
+				font-size: 14px;
+			}
+			
+			#invoiveTabCon {
+				width: 900px;
+				top: 40%;
+				box-shadow: 0 0 10px 0 #737373;
+			}
+			
+			.invoiveTab {
+				margin-top: 40px;
+				max-height: 400px;
+				overflow: auto;
+				padding: 0 30px;
+			}
+			
+			.invoiveTab table {
+				width: 100%;
+			}
+			
+			.invoiveTab table td,
+			.invoiveTab table th {
+				padding: 10px 0;
+				border: 1px solid #e2e2e2;
+				text-align: center;
+			}
+			
+			.invoiveTab table tbody tr {
+				cursor: pointer;
+			}
+			
+			.invoiveTab table tbody tr:hover {
+				background-color: #40AFFE;
+				color: #fff;
+			}
+			
+			.invoiveTab table tbody .active {
+				background-color: #40AFFE;
+				color: #fff;
+			}
+		</style>
+	</head>
+
+	<body>
+		<div class="xx-contant xx-head">
+
+		</div>
+		<div class="xx-contant">
+			<div class="xx-row xx-clear xx-margin-top-40">
+				<div class="per-left xx-left">
+
+				</div>
+				<div class="per-right xx-right">
+					<div class="main-information xx-clear">
+						<div class="main-information-left xx-left xx-clear">
+							<div class="main-information-leftl xx-left">
+								<img src="img/personalcenhead.png" alt="" />
+							</div>
+							<div class="main-information-leftr xx-right">
+								<ul>
+									<li>
+										<h3 class="xx-font-size-18"><b>1391704467</b></h3></li>
+									<li class="xx-font-size-12 xx-font-color-99999">HI,尊敬的用户，欢迎回来！</li>
+									<li class="xx-font-size-12 xx-font-color-99999">账户安全等级：<span class="xx-font-color-42a9ff">高</span>
+										<a href="" class="xx-font-color-42a9ff">查看详情</a>
+									</li>
+									<li class="xx-font-size-12">
+										<i style="font-size: 10px;" class="iconfont icon-youxiangbangding xx-margin-right-10 xx-font-color-42a9ff"></i>
+										<i style="font-size: 10px;" class="iconfont icon-shimingrenzheng"></i>
+										<div class="percen-authentication xx-font-color-fff">
+											未实名认证
+										</div>
+									</li>
+								</ul>
+							</div>
+						</div>
+						<div class="main-information-right xx-right">
+							<div class="percen-record">
+								<ul class="percen-record-header xx-clear xx-margin-top-40 xx-font-size-16 xx-font-color-99999">
+									<li>理赔中保单</li>
+									<li>有效保单</li>
+									<li>失效保单</li>
+								</ul>
+								<ul class="percen-record-bottom xx-clear xx-margin-top-10 xx-font-size-28 xx-font-color-42a9ff">
+									<li>356</li>
+									<li>756</li>
+									<li>756</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+					<div class="per-main xx-margin-top-30">
+						<div class="per-contacts-title">
+							<h3 class="xx-font-size-20">我的保单</h3>
+						</div>
+						<div class="cent-seacriteria">
+							<ul class="xx-clear xx-margin-top-40">
+								<li>
+									<label>
+										开始时间
+									</label>
+									<input type="text" name="" id="censtartTime" value="" placeholder="选择开始时间" />
+								</li>
+								<li>
+									<label>
+										结束时间
+									</label>
+									<input type="text" name="" id="cenendTime" value="" placeholder="选择结束时间" />
+								</li>
+								<li>
+									<input type="text" name="" id="" value="" placeholder="订单号|保单号|被保人" />
+									<button type="button">查询</button>
+								</li>
+							</ul>
+						</div>
+						<div class="cent-tab-choose">
+							<ul id="centTabChoose" class="xx-clear xx-font-size-18 xx-margin-top-30">
+								<li>
+									全部出单
+									<i></i>
+								</li>
+								<li>
+									待录单
+									<i></i>
+								</li>
+								<li>
+									已录单
+									<i></i>
+								</li>
+								<li>
+									已出单
+									<i></i>
+								</li>
+								<li>
+									未支付
+									<i></i>
+								</li>
+							</ul>
+						</div>
+						<div class="cent-table-con">
+							<ul class="cent-table-title xx-clear xx-margin-top-30 xx-font-color-99999">
+								<li>产品</li>
+								<li>被保人</li>
+								<li>订单金额(元)</li>
+								<li>订单状态</li>
+								<li>操作</li>
+							</ul>
+							<div class="cent-table">
+								<div class="cent-tableo xx-margin-top-20">
+									<div class="cent-tableotitle xx-font-size-16 xx-clear"><span class="xx-left xx-padding-left-30">保单号：<span id="tabCentOrder">625115651566</span></span><span class="xx-right xx-padding-right-30">2018.1.26&nbsp;18:23:12</span></div>
+									<ul class="cent-tableo-table xx-font-size-14 xx-clear">
+										<li>
+											<div class="xx-line-height">
+												<p class="xx-font-color-42a9ff">个人资金账户安全险(赠险)</p>
+												<p class="xx-font-color-99999">从2017.2.3&nbsp;12:32:22至017.2.3&nbsp;12:32:22</p>
+												<p class="xx-font-color-42a9ff">个人资金账户安全险(赠险)</p>
+												<p class="xx-font-color-99999">从2017.2.3&nbsp;12:32:22至017.2.3&nbsp;12:32:22</p>
+											</div>
+										</li>
+										<li>
+											<p class="xx-margin-top-60 xx-align-center">大学纷飞</p>
+										</li>
+										<li>
+											<p id="tabInvSum" class="xx-margin-top-60 xx-align-center">12元</p>
+										</li>
+										<li>
+											<p class="xx-margin-top-60 xx-align-center xx-font-color-ff4a4a">未付款</p>
+										</li>
+										<li>
+											<div class="xx-line-height">
+												<button type="button" class="pay" onclick="qyAccOpenBtn($(this),'centShadowCon', 'forChitCon')">立即支付</button>
+												<button type="button" class="part" onclick="qyAccOpenBtn($(this),'centShadowCon', 'forInvoiceCon')">订单详情</button>
+											</div>
+										</li>
+									</ul>
+								</div>
+								<div class="cent-tableo xx-margin-top-20">
+									<div class="cent-tableotitle xx-font-size-16 xx-clear"><span class="xx-left xx-padding-left-30">保单号：<span id="tabCentOrder">213123</span></span><span class="xx-right xx-padding-right-30">2018.1.26&nbsp;18:23:12</span></div>
+									<ul class="cent-tableo-table xx-font-size-14 xx-clear">
+										<li>
+											<p class="xx-font-color-42a9ff xx-margin-top-50">个人资金账户安全险(赠险)</p>
+											<p class="xx-font-color-99999">从2017.2.3&nbsp;12:32:22至017.2.3&nbsp;12:32:22</p>
+										</li>
+										<li>
+											<p class="xx-margin-top-60 xx-align-center">大学纷飞</p>
+										</li>
+										<li>
+											<p id="tabInvSum" class="xx-margin-top-60 xx-align-center">12312312元</p>
+										</li>
+										<li>
+											<p class="xx-margin-top-60 xx-align-center xx-font-color-99999">已出单</p>
+										</li>
+										<li>
+											<div>
+												<button type="button" class="part" onclick="qyAccOpenBtn($(this),'centShadowCon', 'forInvoiceCon')">订单详情</button>
+												<a href="">下载保单</a>
+												<a href="">申请理赔</a>
+											</div>
+										</li>
+									</ul>
+								</div>
+								<div class="cent-tableo xx-margin-top-20">
+									<div class="cent-tableotitle xx-font-size-16 xx-clear"><span class="xx-left xx-padding-left-30">保单号：<span id="tabCentOrder">fasfasfas</span></span><span class="xx-right xx-padding-right-30">2018.1.26&nbsp;18:23:12</span></div>
+									<ul class="cent-tableo-table xx-font-size-14 xx-clear">
+										<li>
+											<p class="xx-font-color-42a9ff xx-margin-top-50">个人资金账户安全险(赠险)</p>
+											<p class="xx-font-color-99999">从2017.2.3&nbsp;12:32:22至017.2.3&nbsp;12:32:22</p>
+										</li>
+										<li>
+											<p class="xx-margin-top-60 xx-align-center">大学纷飞</p>
+										</li>
+										<li>
+											<p id="tabInvSum" class="xx-margin-top-60 xx-align-center">12412412312元</p>
+										</li>
+										<li>
+											<p class="xx-margin-top-60 xx-align-center xx-font-color-42a9ff">待录单</p>
+										</li>
+										<li>
+											<div>
+												<button type="button" class="part" onclick="qyAccOpenBtn($(this),'centShadowCon', 'forInvoiceCon')">订单详情</button>
+											</div>
+										</li>
+									</ul>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div id="centShadowCon" class="cent-shadow-con xx-hide">
+			<div id='centShadow' class="cent-shadow">
+
+			</div>
+			<div id="forInvoiceCon" class="cent-mainbind-con xx-hide">
+				<form id="forInvoiceFrom" action="javascript:;" method="post">
+					<div class="cent-mainbind">
+						<div class="cent-shadtitle">
+							<h3 class="xx-align-center xx-font-size-20"><b>申请发票</b></h3>
+							<i id="" class="iconfont icon-cuo" onclick="qyAccCloseBtn('forInvoiceCon', 'centShadowCon')"></i>
+						</div>
+						<div class="cent-shadbott">
+							<div class="cent-item xx-clear">
+								<label>订单号</label>
+								<div class="cent-input-block">
+									<input type="text" name="" id="centOrder" value="" readonly="readonly" />
+								</div>
+							</div>
+							<div class="cent-item xx-clear">
+								<label>开票金额</label>
+								<div class="cent-input-block">
+									<input type="text" name="" id="centInvoice" value="" readonly="readonly" />
+								</div>
+							</div>
+							<div class="cent-item xx-clear">
+								<label>发票类型</label>
+								<div class="cent-input-block">
+									<select name="" id="invoiceType">
+										<option value="0">企业增值税发票</option>
+										<option value="1">普通发票</option>
+									</select>
+								</div>
+								<div class="invoive-choose" onclick="qyInvOpenBtn('invoiveTabCon')">
+									选择
+								</div>
+							</div>
+							<div class="cent-item xx-clear">
+								<label>发票抬头</label>
+								<div class="cent-input-block">
+									<input type="text" name="" id="invRise" value="" placeholder="请输入发票抬头" datatype="*" nullmsg="请输入发票抬头" sucmsg="发票抬头验证格式通过" />
+								</div>
+							</div>
+							<div id="invoiceTypeCon">
+								<div class="cent-item xx-clear">
+									<label>纳税人识别号</label>
+									<div class="cent-input-block">
+										<input type="text" name="" id="invIdentify" value="" placeholder="请输入纳税人识别号" datatype="*" nullmsg="请输入纳税人识别号" sucmsg="纳税人识别号验证格式通过" />
+									</div>
+								</div>
+								<div class="cent-item xx-clear">
+									<label>开户行名称</label>
+									<div class="cent-input-block">
+										<input type="text" name="" id="invAccount" value="" placeholder="请输入开户行名称" datatype="*" nullmsg="请输入开户行名称" sucmsg="开户行名称验证格式通过" />
+									</div>
+								</div>
+								<div class="cent-item xx-clear">
+									<label>开户账号</label>
+									<div class="cent-input-block">
+										<input type="text" name="" id="invUser" value="" placeholder="请输入开户账号" datatype="*" nullmsg="请输入开户账号" sucmsg="开户账号验证格式通过" />
+									</div>
+								</div>
+							</div>
+							<div class="cent-item xx-clear">
+								<label>发票内容</label>
+								<div class="cent-input-block">
+									<input type="text" name="" id="invAc" value="" placeholder="请输入发票内容" datatype="*" nullmsg="请输入发票内容" sucmsg="发票内容验证格式通过" />
+								</div>
+							</div>
+							<div class="cent-item xx-clear">
+								<label>联系人</label>
+								<div class="cent-input-block">
+									<input type="text" name="" id="" value="" placeholder="请输入联系人" datatype="*" nullmsg="请输入联系人" sucmsg="联系人验证格式通过" />
+								</div>
+							</div>
+							<div class="cent-item xx-clear">
+								<label>联系电话</label>
+								<div class="cent-input-block">
+									<input type="text" name="" id="" value="" placeholder="请输入联系电话" datatype="*" nullmsg="请输入联系电话" sucmsg="联系电话验证格式通过" />
+								</div>
+							</div>
+							<div class="cent-item xx-clear">
+								<label>快递地址</label>
+								<div class="cent-input-block">
+									<input type="text" name="" id="" value="" placeholder="请输入快递地址" datatype="*" nullmsg="请输入快递地址" sucmsg="快递地址验证格式通过" />
+								</div>
+							</div>
+							<div class="cent-btn-style">
+								<a id="liForInvoiceBtn" href="javascript:;">保存</a>
+								<a id="" href="javascript:;" onclick="qyAccCloseBtn('forInvoiceCon', 'centShadowCon')">关闭</a>
+							</div>
+						</div>
+					</div>
+				</form>
+			</div>
+			<div id="invoiveTabCon" class="cent-mainbind-con xx-hide">
+				<div class="cent-mainbind">
+					<div class="cent-shadtitle">
+						<h3 class="xx-align-center xx-font-size-20"><b>选择常用发票信息</b></h3>
+						<i id="" class="iconfont icon-cuo" onclick="qyAccCloseBtn('invoiveTabCon', '')"></i>
+					</div>
+					<div class="invoiveqyTab">
+						<div class="invoiveTab">
+							<table border="0" cellspacing="0" cellpadding="0">
+								<thead>
+									<tr>
+										<th>序列号</th>
+										<th>发票类型</th>
+										<th>抬头</th>
+										<th>纳税人识别号</th>
+										<th>开户行</th>
+										<th>开户行名称</th>
+										<th>开户账号</th>
+										<th>内容</th>
+									</tr>
+								</thead>
+								<tbody id="invoiveTabTr">
+									<tr class="">
+										<td>1</td>
+										<td>企业增值税发票</td>
+										<td>3</td>
+										<td>4</td>
+										<td>5</td>
+										<td>6</td>
+										<td>7</td>
+										<td>8</td>
+									</tr>
+									<tr class="">
+										<td>2</td>
+										<td>企业增值税发票</td>
+										<td>3</td>
+										<td>4</td>
+										<td>5</td>
+										<td>6</td>
+										<td>7</td>
+										<td>8</td>
+									</tr>
+									<tr class="">
+										<td>3</td>
+										<td>企业增值税发票</td>
+										<td>3</td>
+										<td>4</td>
+										<td>5</td>
+										<td>6</td>
+										<td>7</td>
+										<td>8</td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+						<div class="cent-btn-style">
+							<a id="liqyInvoiveTabBtn" href="javascript:;">保存</a>
+						</div>
+					</div>
+					<div class="invoiveptTab">
+						<div class="invoiveTab">
+							<table border="0" cellspacing="0" cellpadding="0">
+								<thead>
+									<tr>
+										<th>序列号</th>
+										<th>发票类型</th>
+										<th>抬头</th>
+										<th>内容</th>
+									</tr>
+								</thead>
+								<tbody id="invoiveTabTr">
+									<tr class="">
+										<td>1</td>
+										<td>普通</td>
+										<td>7</td>
+										<td>8</td>
+									</tr>
+									<tr class="">
+										<td>1</td>
+										<td>普通</td>
+										<td>7</td>
+										<td>8</td>
+									</tr>
+									<tr class="">
+										<td>1</td>
+										<td>普通</td>
+										<td>7</td>
+										<td>8</td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+						<div class="cent-btn-style">
+							<a id="liptInvoiveTabBtn" href="javascript:;">保存</a>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div id="forChitCon" class="cent-mainbind-con xx-hide">
+				<form id="forChitFrom" action="javascript:;" method="post">
+					<div class="cent-mainbind">
+						<div class="cent-shadtitle">
+							<h3 class="xx-align-center xx-font-size-20"><b>申请纸质保单</b></h3>
+							<i id="" class="iconfont icon-cuo" onclick="qyAccCloseBtn('forChitCon', 'centShadowCon')"></i>
+						</div>
+						<div class="cent-shadbott">
+							<div class="cent-item xx-clear">
+								<label>保单号</label>
+								<div class="cent-input-block">
+									<input type="text" name="" id="linkNumber" value="" readonly="readonly" />
+								</div>
+							</div>
+							<div class="cent-item xx-clear">
+								<label>联系人</label>
+								<div class="cent-input-block">
+									<input type="text" name="" id="linkMan" value="" placeholder="请输入联系人" datatype="*" nullmsg="请输入联系人" sucmsg="联系人验证格式通过" />
+								</div>
+								<div class="invoive-choose" onclick="qyInvOpenBtn('contactsCon')">
+									选择
+								</div>
+							</div>
+							<div class="cent-item xx-clear">
+								<label>联系电话</label>
+								<div class="cent-input-block">
+									<input type="text" name="" id="linkPhone" value="" placeholder="请输入联系电话" datatype="*" nullmsg="请输入联系电话" sucmsg="联系电话验证格式通过" />
+								</div>
+							</div>
+							<div class="cent-item xx-clear">
+								<label>快递地址</label>
+								<div class="cent-input-block">
+									<input type="text" name="" id="linkAdress" value="" placeholder="请输入快递地址" datatype="*" nullmsg="请输入快递地址" sucmsg="快递地址验证格式通过" />
+								</div>
+							</div>
+							<div class="cent-btn-style">
+								<a id="forChitBtn" href="javascript:;">保存</a>
+								<a id="" href="javascript:;" onclick="qyAccCloseBtn('forChitCon', 'centShadowCon')">关闭</a>
+							</div>
+						</div>
+					</div>
+				</form>
+			</div>
+			<div id="contactsCon" class="cent-mainbind-con xx-hide">
+				<div class="cent-mainbind">
+					<div class="cent-shadtitle">
+						<h3 class="xx-align-center xx-font-size-20"><b>选择常用地址</b></h3>
+						<i id="" class="iconfont icon-cuo" onclick="qyAccCloseBtn('contactsCon', '')"></i>
+					</div>
+					<div class="invoiveqyTab">
+						<div class="invoiveTab">
+							<table border="0" cellspacing="0" cellpadding="0">
+								<thead>
+									<tr>
+										<th>序列号</th>
+										<th>联系人</th>
+										<th>联系电话</th>
+										<th>地址</th>
+									</tr>
+								</thead>
+								<tbody id="invoiveTabTr">
+									<tr class="">
+										<td>1</td>
+										<td>1111</td>
+										<td>7</td>
+										<td>8</td>
+									</tr>
+									<tr class="">
+										<td>2</td>
+										<td>1111</td>
+										<td>7</td>
+										<td>8</td>
+									</tr>
+									<tr class="">
+										<td>2</td>
+										<td>1111</td>
+										<td>7</td>
+										<td>8</td>
+									</tr>
+									<tr class="">
+										<td>2</td>
+										<td>1111</td>
+										<td>7</td>
+										<td>8</td>
+									</tr>
+									<tr class="">
+										<td>2</td>
+										<td>1111</td>
+										<td>7</td>
+										<td>8</td>
+									</tr>
+									<tr class="">
+										<td>2</td>
+										<td>1111</td>
+										<td>7</td>
+										<td>8</td>
+									</tr>
+									<tr class="">
+										<td>2</td>
+										<td>1111</td>
+										<td>7</td>
+										<td>8</td>
+									</tr>
+									<tr class="">
+										<td>2</td>
+										<td>1111</td>
+										<td>7</td>
+										<td>8</td>
+									</tr>
+									<tr class="">
+										<td>2</td>
+										<td>1111</td>
+										<td>7</td>
+										<td>8</td>
+									</tr>
+									<tr class="">
+										<td>2</td>
+										<td>1111</td>
+										<td>7</td>
+										<td>8</td>
+									</tr>
+									<tr class="">
+										<td>2</td>
+										<td>1111</td>
+										<td>7</td>
+										<td>8</td>
+									</tr>
+									<tr class="">
+										<td>2</td>
+										<td>1111</td>
+										<td>7</td>
+										<td>8</td>
+									</tr>
+									<tr class="">
+										<td>2</td>
+										<td>1111</td>
+										<td>7</td>
+										<td>8</td>
+									</tr>
+									<tr class="">
+										<td>2</td>
+										<td>1111</td>
+										<td>7</td>
+										<td>8</td>
+									</tr>
+									<tr class="">
+										<td>2</td>
+										<td>1111</td>
+										<td>7</td>
+										<td>8</td>
+									</tr>
+									<tr class="">
+										<td>2</td>
+										<td>1111</td>
+										<td>7</td>
+										<td>8</td>
+									</tr>
+									<tr class="">
+										<td>2</td>
+										<td>1111</td>
+										<td>7</td>
+										<td>8</td>
+									</tr>
+									<tr class="">
+										<td>2</td>
+										<td>1111</td>
+										<td>7</td>
+										<td>8</td>
+									</tr>
+									<tr class="">
+										<td>2</td>
+										<td>1111</td>
+										<td>7</td>
+										<td>8</td>
+									</tr>
+									<tr class="">
+										<td>2</td>
+										<td>1111</td>
+										<td>7</td>
+										<td>8</td>
+									</tr>
+									<tr class="">
+										<td>2</td>
+										<td>1111</td>
+										<td>7</td>
+										<td>8</td>
+									</tr>
+									<tr class="">
+										<td>2</td>
+										<td>1111</td>
+										<td>7</td>
+										<td>8</td>
+									</tr>
+									<tr class="">
+										<td>2</td>
+										<td>1111</td>
+										<td>7</td>
+										<td>8</td>
+									</tr>
+									<tr class="">
+										<td>2</td>
+										<td>1111</td>
+										<td>7</td>
+										<td>8</td>
+									</tr>
+									<tr class="">
+										<td>2</td>
+										<td>1111</td>
+										<td>7</td>
+										<td>8</td>
+									</tr>
+									<tr class="">
+										<td>2</td>
+										<td>1111</td>
+										<td>7</td>
+										<td>8</td>
+									</tr>
+									<tr class="">
+										<td>2</td>
+										<td>1111</td>
+										<td>7</td>
+										<td>8</td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+						<div class="cent-btn-style">
+							<a id="liqycontactsBtn" href="javascript:;">保存</a>
+						</div>
+					</div>
+					<div class="invoiveptTab">
+						<div class="invoiveTab">
+							<table border="0" cellspacing="0" cellpadding="0">
+								<thead>
+									<tr>
+										<th>序列号</th>
+										<th>发票类型</th>
+										<th>抬头</th>
+										<th>内容</th>
+									</tr>
+								</thead>
+								<tbody id="invoiveTabTr">
+									<tr class="">
+										<td>1</td>
+										<td>普通</td>
+										<td>7</td>
+										<td>8</td>
+									</tr>
+									<tr class="">
+										<td>1</td>
+										<td>普通</td>
+										<td>7</td>
+										<td>8</td>
+									</tr>
+									<tr class="">
+										<td>1</td>
+										<td>普通</td>
+										<td>7</td>
+										<td>8</td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+						<div class="cent-btn-style">
+							<a id="liptInvoiveTabBtn" href="javascript:;">保存</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="xx-contant xx-foot">
+		</div>
+	</body>
+	<script src="js/jquery-2.1.0.js" type="text/javascript" charset="utf-8"></script>
+	<script src="js/utility3.0.js" type="text/javascript" charset="utf-8"></script>
+	<script src="js/laydate/laydate.js" type="text/javascript" charset="utf-8"></script>
+	<script src="js/Validform_v5.3.2/Validform_v5.3.2.js" type="text/javascript" charset="utf-8"></script>
+	<script type="text/javascript">
+		$(function() {
+			//引入头部
+			$('.xx-head').load('xx-nav.html');
+			//引入底部
+			$('.xx-foot').load('xx-foot.html');
+			//引入左边导航栏
+			$('.per-left').load('personal-nav-left.html');
+
+			//开始时间
+			laydate.render({
+				elem: '#censtartTime' //指定元素
+			});
+
+			//结束时间
+			laydate.render({
+				elem: '#cenendTime' //指定元素
+			});
+
+			//初始化
+			var centTabChoosei = 0;
+			$('#centTabChoose li').eq(centTabChoosei).addClass('active');
+			$('#centTabChoose i').eq(centTabChoosei).fadeIn();
+			//状态选择
+			$('#centTabChoose li').each(function(index, ele) {
+				$(this).click(function() {
+					centTabChoosei = index;
+					$('#centTabChoose li').removeClass('active');
+					$('#centTabChoose i').fadeOut();
+					$('#centTabChoose li').eq(centTabChoosei).addClass('active');
+					$('#centTabChoose i').eq(centTabChoosei).fadeIn();
+				});
+			});
+			//给遮罩高度
+			$('#centShadowCon').height(getWinHeight());
+			//点击遮罩关闭
+			$('#centShadow').click(function() {
+				qyAccCloseBtn('forChitCon', 'centShadowCon');
+				qyAccCloseBtn('forInvoiceCon', 'centShadowCon');
+			});
+			//发票类型选择
+			$('#invoiceType').change(function() {
+				if($('#invoiceType option').hasClass('removeop')) {
+					$('#invoiceType option').eq(0).remove();
+				}
+				if($(this).val() == 1) {
+					$('#invoiceTypeCon').addClass('xx-hide');
+					$('#invRise').val('');
+					$('#invIdentify').val('');
+					$('#invAccount').val('');
+					$('#invUser').val('');
+					$('#invAc').val('');
+					$('#invoiceTypeCon input').attr('ignore','ignore');
+				} else {
+					$('#invoiceTypeCon').removeClass('xx-hide');
+					$('#invRise').val('');
+					$('#invIdentify').val('');
+					$('#invAccount').val('');
+					$('#invUser').val('');
+					$('#invAc').val('');
+					$('#invoiceTypeCon input').removeAttr('ignore');
+				}
+			});
+			//常用发票类型选择
+			$('#invoiveTabTr tr').each(function() {
+				$(this).click(function() {
+					$('#invoiveTabTr tr').removeClass('active');
+					$(this).addClass('active');
+				});
+			});
+			//企业保存发票信息
+			$('#liqyInvoiveTabBtn').click(function() {
+				var actdText = $('.invoiveqyTab #invoiveTabTr .active td');
+				if(actdText.text() != '') {
+					$('#invRise').val(actdText.eq(2).text());
+					$('#invIdentify').val(actdText.eq(3).text());
+					$('#invAccount').val(actdText.eq(4).text());
+					$('#invUser').val(actdText.eq(5).text());
+					$('#invAc').val(actdText.eq(6).text());
+				}
+				$('#invoiveTabTr tr').removeClass('active');
+				$('#invoiveTabCon').fadeOut();
+			});
+			//联系人地址选择
+			$('#liqycontactsBtn').click(function(){
+				var actdText = $('.invoiveqyTab #invoiveTabTr .active td');
+				if(actdText.text() != '') {
+					$('#linkMan').val(actdText.eq(1).text());
+					$('#linkPhone').val(actdText.eq(2).text());
+					$('#linkAdress').val(actdText.eq(3).text());
+				}
+				$('#invoiveTabTr tr').removeClass('active');
+				$('#contactsCon').fadeOut();
+			});
+			//普通保存发票信息
+			$('#liptInvoiveTabBtn').click(function() {
+				var actdText = $('.invoiveptTab #invoiveTabTr .active td');
+				if(actdText.text() != '') {
+					$('#invRise').val(actdText.eq(2).text());
+					$('#invAc').val(actdText.eq(3).text());
+				}
+				$('#invoiveTabTr tr').removeClass('active');
+				$('#invoiveTabCon').fadeOut();
+			});
+			//申请发票
+			$('#forInvoiceFrom').Validform({
+				btnSubmit: "#liForInvoiceBtn",
+				btnReset: "", //重置信息按钮
+				tiptype: 3,
+				beforeCheck: function(curform) {
+					//在表单提交执行验证之前执行的函数，curform参数是当前表单对象。
+					//这里明确return false的话将不会继续执行验证操作;	
+				},
+				beforeSubmit: function(curform) {
+					//在验证成功后，表单提交前执行的函数，curform参数是当前表单对象。
+					//这里明确return false的话表单将不会提交;	
+					alert('成功');
+				},
+				callback: function(data) {
+					//返回数据data是json对象，{"info":"demo info","status":"y"}
+					//info: 输出提示信息;
+					//status: 返回提交数据的状态,是否提交成功。如可以用"y"表示提交成功，"n"表示提交失败，在ajax_post.php文件返回数据里自定字符，主要用在callback函数里根据该值执行相应的回调操作;
+					//你也可以在ajax_post.php文件返回更多信息在这里获取，进行相应操作；
+					//ajax遇到服务端错误时也会执行回调，这时的data是{ status:**, statusText:**, readyState:**, responseText:** }；
+
+					//这里执行回调操作;
+					//注意：如果不是ajax方式提交表单，传入callback，这时data参数是当前表单对象，回调函数会在表单验证全部通过后执行，然后判断是否提交表单，如果callback里明确return false，则表单不会提交，如果return true或没有return，则会提交表单。
+				}
+			});
+			//纸质保单
+			$('#forChitFrom').Validform({
+				btnSubmit: "#forChitBtn",
+				btnReset: "", //重置信息按钮
+				tiptype: 3,
+				beforeCheck: function(curform) {
+					//在表单提交执行验证之前执行的函数，curform参数是当前表单对象。
+					//这里明确return false的话将不会继续执行验证操作;	
+				},
+				beforeSubmit: function(curform) {
+					//在验证成功后，表单提交前执行的函数，curform参数是当前表单对象。
+					//这里明确return false的话表单将不会提交;	
+					alert('成功');
+				},
+				callback: function(data) {
+					//返回数据data是json对象，{"info":"demo info","status":"y"}
+					//info: 输出提示信息;
+					//status: 返回提交数据的状态,是否提交成功。如可以用"y"表示提交成功，"n"表示提交失败，在ajax_post.php文件返回数据里自定字符，主要用在callback函数里根据该值执行相应的回调操作;
+					//你也可以在ajax_post.php文件返回更多信息在这里获取，进行相应操作；
+					//ajax遇到服务端错误时也会执行回调，这时的data是{ status:**, statusText:**, readyState:**, responseText:** }；
+
+					//这里执行回调操作;
+					//注意：如果不是ajax方式提交表单，传入callback，这时data参数是当前表单对象，回调函数会在表单验证全部通过后执行，然后判断是否提交表单，如果callback里明确return false，则表单不会提交，如果return true或没有return，则会提交表单。
+				}
+			});
+		});
+
+		//打开封装
+		function qyAccOpenBtn(ele, acccon, confram) {
+			$('#' + acccon).fadeIn();
+			$('#' + confram).fadeIn();
+			var order = ele.parents('.cent-tableo').find('#tabCentOrder').text(); //获取订单号
+			var money = ele.parents('.cent-tableo').find('#tabInvSum').text(); //获取金额
+			$('#forInvoiceCon input').val(''); //清空input val值
+			$('#forChitCon input').val('');
+			$('.Validform_checktip ').text(''); //清空验证
+			$('#centOrder').val(order);
+			$('#centInvoice').val(money);
+		}
+		//关闭封装
+		function qyAccCloseBtn(acccon, confram) {
+			$('#' + acccon).fadeOut();
+			$('#' + confram).fadeOut();
+		}
+		//打开发票类型判断
+		function qyInvOpenBtn(acccon) {
+			$('#' + acccon).fadeIn();
+			if($('#invoiceType').find('option:selected').val() == 1) {
+				$('.invoiveqyTab').hide();
+				$('.invoiveptTab').fadeIn();
+			} else {
+				$('.invoiveqyTab').fadeIn();
+				$('.invoiveptTab').hide();
+			}
+		}
+	</script>
+
+</html>
